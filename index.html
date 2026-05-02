@@ -3,420 +3,1089 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixle.pro - Next-Generation Animation Platform</title>
-     <!-- Added SEO Meta Tags -->
-     <meta name="description" content="Next-generation cloud animation platform with AI-powered asset creation, real-time collaboration, and seamless distribution tools. Create, rig, and animate in one environment.">
-     <meta name="keywords" content="cloud animation software, online animation tool, 2d cloud rigging, AI assets for animation, animation storytelling, animation distribution, 2D animation platform, AI animation tools, cloud-based animation, real-time animation collaboration">
-     
-     <!-- Open Graph Meta Tags -->
-     <meta property="og:title" content="Pixle.pro - Next-Generation Animation Platform">
-     <meta property="og:description" content="Create, rig, and animate with AI-powered tools in a cloud-native environment. From idea to distribution - all in one platform.">
-     <meta property="og:type" content="website">
-     
-     <!-- Twitter Card Meta Tags -->
-     <meta name="twitter:card" content="summary_large_image">
-     <meta name="twitter:title" content="Pixle.pro - Next-Generation Animation Platform">
-     <meta name="twitter:description" content="Next-generation cloud animation platform with AI-powered tools and real-time collaboration.">
-     
+    <title>Pixle.Pro - From Idea to Animated Video</title>
+    <meta name="description" content="Pixle.Pro is a browser-based video creation app for creating, editing, collaborating, and exporting animated videos with a canvas editor, timeline tools, assets, comments, and assisted background and audio generation.">
+    <meta name="keywords" content="Pixle.Pro, browser video editor, timeline video editor, animated video editor, canvas editor, collaborative video creation, AI backgrounds, AI audio generation">
+    <meta property="og:title" content="Pixle.Pro - From Idea to Animated Video">
+    <meta property="og:description" content="Create, edit, collaborate, and export animated videos in one browser workspace built around scenes, assets, timeline editing, comments, and assisted media generation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.pixle.pro/">
+    <meta property="og:image" content="https://www.pixle.pro/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pixle.Pro - From Idea to Animated Video">
+    <meta name="twitter:description" content="A browser workspace for animated video creation, timeline editing, collaboration, and export.">
+    <link rel="canonical" href="https://www.pixle.pro/">
+    <link rel="icon" href="./favicon_io/icon.svg type=image/svg+xml">
+
     <style>
         :root {
-            --primary-purple: #7B6C9E;
-            --light-purple: #8E7FB8;
-            --dark-bg: #000000;
+            --bg: #050506;
+            --surface: #111116;
+            --surface-2: #17171e;
+            --line: rgba(255, 255, 255, 0.13);
+            --text: #ffffff;
+            --muted: #bdb9ca;
+            --brand: #7b6c9e;
+            --brand-light: #a997d8;
+            --purple: #8e7fb8;
+            --violet: #6f5da0;
+            --cyan: #5bd6ff;
+            --green: #86efac;
+            --amber: #f2c94c;
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--dark-bg);
-            color: white;
-            line-height: 1.6;
+            min-width: 320px;
+            background:
+                linear-gradient(120deg, rgba(123, 108, 158, 0.22), transparent 35%),
+                linear-gradient(260deg, rgba(142, 127, 184, 0.16), transparent 48%),
+                linear-gradient(25deg, rgba(91, 214, 255, 0.08), transparent 58%),
+                var(--bg);
+            color: var(--text);
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.55;
+        }
+
+        a {
+            color: inherit;
         }
 
         nav {
-            background-color: var(--dark-bg);
-            padding: 1rem;
             position: fixed;
-            width: 100%;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid rgba(123, 108, 158, 0.2);
+            width: 100%;
+            border-bottom: 1px solid rgba(142, 127, 184, 0.24);
+            background: rgba(5, 5, 6, 0.88);
+            backdrop-filter: blur(16px);
         }
 
         .nav-content {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0.85rem 1.25rem;
         }
 
-        .logo {
-            height: 60px;
-            width: 80 px;
+        .brand-logo {
+            display: block;
+            width: 118px;
+            height: 36px;
+            object-fit: cover;
+            object-position: center 56%;
+            mix-blend-mode: screen;
         }
 
         .nav-links {
             display: flex;
             align-items: center;
+            gap: 1.4rem;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.94rem;
         }
 
         .nav-links a {
-            color: white;
             text-decoration: none;
-            margin-left: 2rem;
-            transition: color 0.3s;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--brand-light);
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 40px;
+            padding: 0.62rem 0.95rem;
+            border: 1px solid rgba(169, 151, 216, 0.48);
+            border-radius: 8px;
+            background: rgba(123, 108, 158, 0.18);
+            color: var(--text);
+            font-weight: 800;
         }
 
         .social-links {
             display: flex;
             align-items: center;
-            margin-left: 2rem;
+            gap: 0.8rem;
         }
 
         .social-links a {
-            text-decoration: none;
-            margin-left: 1rem;
-            transition: opacity 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            opacity: 0.84;
+            transition: opacity 0.2s ease, transform 0.2s ease;
         }
 
-        .social-links a:hover {
-            opacity: 0.7;
+        .social-links a:hover,
+        .social-links a:focus-visible {
+            opacity: 1;
+            transform: translateY(-1px);
         }
 
         .social-icon {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
         }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .social-links {
-                display: flex;
-                position: fixed;
-                bottom: 1rem;
-                right: 1rem;
-                margin: 0;
-                background: rgba(0, 0, 0, 0.8);
-                padding: 0.5rem;
-                border-radius: 25px;
-            }
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-purple);
+        main {
+            overflow: hidden;
         }
 
         section {
-            padding: 4rem 2rem;
+            padding: 5rem 1.25rem;
+            scroll-margin-top: 82px;
         }
 
         .section-content {
-            max-width: 1200px;
+            max-width: 1180px;
             margin: 0 auto;
         }
 
+        .eyebrow {
+            margin-bottom: 0.75rem;
+            color: var(--brand-light);
+            font-size: 0.78rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2,
+        h3 {
+            line-height: 1.1;
+        }
+
+        h1 {
+            max-width: 830px;
+            margin: 0 auto 1.25rem;
+            font-size: clamp(2.65rem, 7vw, 5rem);
+        }
+
+        .brand-gradient {
+            color: transparent;
+            background: linear-gradient(90deg, #ffffff 0%, #ddd5f3 44%, var(--brand-light) 72%, var(--brand) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        h2 {
+            max-width: 760px;
+            margin-bottom: 1rem;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        h3 {
+            margin-bottom: 0.7rem;
+            font-size: 1.12rem;
+        }
+
+        p {
+            color: var(--muted);
+        }
+
         .hero {
-            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            min-height: 92vh;
+            padding-top: 7.5rem;
+            text-align: center;
+            isolation: isolate;
+        }
+
+        .hero::before {
+            position: absolute;
+            inset: 0;
+            z-index: -3;
+            background:
+                linear-gradient(rgba(169, 151, 216, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(169, 151, 216, 0.055) 1px, transparent 1px);
+            background-size: 64px 64px;
+            content: "";
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), transparent 88%);
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), transparent 88%);
+        }
+
+        .hero-preview {
+            position: absolute;
+            top: 7.1rem;
+            left: 50%;
+            z-index: -2;
+            width: min(1020px, 92vw);
+            min-height: 520px;
+            transform: translateX(-50%);
+            opacity: 0.46;
+            pointer-events: none;
+        }
+
+        .editor-preview {
+            display: grid;
+            grid-template-rows: 44px 1fr 96px;
+            min-height: 520px;
+            overflow: hidden;
+            border: 1px solid rgba(169, 151, 216, 0.28);
+            border-radius: 8px;
+            background:
+                linear-gradient(145deg, rgba(123, 108, 158, 0.12), transparent 42%),
+                rgba(17, 17, 22, 0.94);
+            box-shadow: 0 30px 110px rgba(0, 0, 0, 0.58), 0 0 70px rgba(123, 108, 158, 0.18);
+        }
+
+        .preview-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+            border-bottom: 1px solid var(--line);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.82rem;
+            font-weight: 800;
+        }
+
+        .preview-workspace {
+            display: grid;
+            grid-template-columns: 150px 1fr 180px;
+            min-height: 380px;
+        }
+
+        .preview-panel {
+            padding: 1rem;
+            border-right: 1px solid var(--line);
+            background: rgba(0, 0, 0, 0.18);
+        }
+
+        .preview-panel.right {
+            border-right: 0;
+            border-left: 1px solid var(--line);
+        }
+
+        .preview-pill,
+        .preview-row,
+        .preview-swatch {
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.09);
+        }
+
+        .preview-pill {
+            width: 72%;
+            height: 10px;
+            margin-bottom: 0.9rem;
+        }
+
+        .preview-row {
+            height: 42px;
+            margin-bottom: 0.75rem;
+        }
+
+        .preview-swatch {
+            height: 74px;
+            margin-bottom: 0.75rem;
+        }
+
+        .preview-swatch:nth-child(2) {
+            background: rgba(91, 214, 255, 0.16);
+        }
+
+        .preview-swatch:nth-child(3) {
+            background: rgba(134, 239, 172, 0.14);
+        }
+
+        .preview-canvas {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 6rem 2rem 4rem;
+            min-height: 380px;
+            background:
+                linear-gradient(145deg, rgba(142, 127, 184, 0.22), transparent 43%),
+                linear-gradient(315deg, rgba(242, 201, 76, 0.12), transparent 45%),
+                #15151b;
+        }
+
+        .scene-frame {
+            position: relative;
+            width: min(500px, 74%);
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background:
+                linear-gradient(to top, rgba(134, 239, 172, 0.34), transparent 34%),
+                linear-gradient(140deg, rgba(91, 214, 255, 0.28), rgba(123, 108, 158, 0.34));
+        }
+
+        .scene-caption {
+            position: absolute;
+            left: 7%;
+            bottom: 11%;
+            width: 42%;
+            height: 18px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.78);
+        }
+
+        .scene-character {
+            position: absolute;
+            right: 21%;
+            bottom: 18%;
+            width: 56px;
+            height: 96px;
+            border-radius: 28px 28px 16px 16px;
+            background: var(--purple);
+            box-shadow:
+                -34px 24px 0 -18px rgba(255, 255, 255, 0.72),
+                40px 16px 0 -18px rgba(255, 255, 255, 0.72);
+        }
+
+        .scene-character::before {
+            position: absolute;
+            top: -36px;
+            left: 9px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #f4cfad;
+            content: "";
+        }
+
+        .preview-timeline {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 1rem;
+            padding: 1rem;
+            border-top: 1px solid var(--line);
+            background: rgba(0, 0, 0, 0.24);
+        }
+
+        .timeline-labels,
+        .timeline-tracks {
+            display: grid;
+            gap: 0.55rem;
+        }
+
+        .timeline-labels span,
+        .track {
+            height: 14px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .track {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .track::before {
+            position: absolute;
+            inset: 0 auto 0 0;
+            border-radius: inherit;
+            content: "";
+        }
+
+        .track:nth-child(1)::before {
+            width: 58%;
+            background: var(--cyan);
+        }
+
+        .track:nth-child(2)::before {
+            width: 42%;
+            background: var(--green);
+        }
+
+        .track:nth-child(3)::before {
+            width: 72%;
+            background: var(--purple);
         }
 
         .hero-content {
-            max-width: 800px;
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
         }
 
         .hero-logo {
-            width: 300px;
-            margin-bottom: 2rem;
+            width: min(320px, 72vw);
+            height: 96px;
+            margin-bottom: 1.25rem;
+            object-fit: cover;
+            object-position: center 56%;
+            mix-blend-mode: screen;
         }
 
-        .tagline {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: white;
-            font-weight: bold;
+        .hero-copy {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: rgba(255, 255, 255, 0.86);
+            font-size: 1.16rem;
         }
 
-        .sub-tagline {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: var(--primary-purple);
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0.9rem;
+            margin-bottom: 2.1rem;
         }
 
-        .waitlist-form {
-            max-width: 400px;
-            margin: 2rem auto;
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50px;
+            padding: 0.85rem 1.2rem;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            font-weight: 900;
+            text-decoration: none;
+            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
         }
 
-        .waitlist-input {
-            width: 100%;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border: 2px solid var(--primary-purple);
-            background: transparent;
-            color: white;
-            border-radius: 25px;
-            font-size: 1rem;
-        }
-
-        .waitlist-input:focus {
-            outline: none;
-            border-color: var(--light-purple);
-        }
-
-        .submit-button {
-            background: var(--primary-purple);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: transform 0.3s, background-color 0.3s;
-            width: 100%;
-        }
-
-        .submit-button:hover {
-            background: var(--light-purple);
+        .button:hover,
+        .button:focus-visible {
             transform: translateY(-2px);
         }
 
+        .button.primary {
+            background: linear-gradient(135deg, var(--brand-light), var(--violet));
+            color: var(--text);
+            box-shadow: 0 16px 36px rgba(123, 108, 158, 0.26);
+        }
+
+        .button.secondary {
+            border-color: rgba(169, 151, 216, 0.38);
+            background: rgba(123, 108, 158, 0.1);
+            color: var(--text);
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.8rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .proof-item,
+        .feature-card,
+        .workflow-card,
+        .audience-card {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: linear-gradient(145deg, rgba(123, 108, 158, 0.08), rgba(255, 255, 255, 0.035));
+        }
+
+        .proof-item {
+            min-height: 76px;
+            padding: 0.9rem 1rem;
+            background: rgba(5, 5, 6, 0.64);
+            text-align: left;
+        }
+
+        .proof-item strong {
+            display: block;
+            color: var(--text);
+            font-size: 0.93rem;
+        }
+
+        .proof-item span {
+            display: block;
+            margin-top: 0.22rem;
+            color: var(--muted);
+            font-size: 0.86rem;
+        }
+
         .features {
-            background-color: rgba(123, 108, 158, 0.05);
+            border-top: 1px solid rgba(142, 127, 184, 0.24);
+            background:
+                linear-gradient(135deg, rgba(123, 108, 158, 0.12), transparent 36%),
+                var(--surface);
+        }
+
+        .section-intro {
+            max-width: 760px;
+            margin-bottom: 2rem;
+            font-size: 1.04rem;
         }
 
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
         }
 
         .feature-card {
-            background: rgba(123, 108, 158, 0.1);
-            padding: 2rem;
-            border-radius: 10px;
-            border: 1px solid rgba(123, 108, 158, 0.2);
-            transition: transform 0.3s;
+            min-height: 185px;
+            padding: 1.25rem;
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
+        .feature-marker {
+            width: 34px;
+            height: 6px;
+            margin-bottom: 1.1rem;
+            border-radius: 8px;
+            background: var(--brand-light);
         }
 
-        .feature-icon {
-            font-size: 2rem;
-            color: var(--primary-purple);
-            margin-bottom: 1rem;
+        .feature-card:nth-child(2) .feature-marker,
+        .feature-card:nth-child(5) .feature-marker {
+            background: var(--cyan);
+        }
+
+        .feature-card:nth-child(3) .feature-marker,
+        .feature-card:nth-child(6) .feature-marker {
+            background: var(--green);
+        }
+
+        .feature-card p,
+        .workflow-card p,
+        .audience-card p {
+            font-size: 0.96rem;
+        }
+
+        .workflow {
+            background: #080809;
+        }
+
+        .workflow-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+            counter-reset: workflow;
+        }
+
+        .workflow-card {
+            min-height: 170px;
+            padding: 1.25rem;
+            counter-increment: workflow;
+        }
+
+        .workflow-card::before {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            margin-bottom: 1.15rem;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 8px;
+            color: var(--brand-light);
+            content: counter(workflow);
+            font-weight: 900;
+        }
+
+        .audience {
+            border-top: 1px solid rgba(142, 127, 184, 0.24);
+            border-bottom: 1px solid rgba(142, 127, 184, 0.24);
+            background:
+                linear-gradient(150deg, rgba(123, 108, 158, 0.12), transparent 34%),
+                var(--surface-2);
         }
 
         .audience-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
         }
 
         .audience-card {
-            background: rgba(123, 108, 158, 0.1);
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid rgba(123, 108, 158, 0.2);
+            min-height: 150px;
+            padding: 1.25rem;
         }
 
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-purple);
+        .beta {
+            background:
+                linear-gradient(135deg, rgba(123, 108, 158, 0.22), transparent 38%),
+                linear-gradient(250deg, rgba(91, 214, 255, 0.08), transparent 42%),
+                #070708;
         }
 
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: white;
+        .beta-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+            gap: 2rem;
+            align-items: start;
         }
 
-        p {
-            margin-bottom: 1rem;
+        .beta-list {
+            display: grid;
+            gap: 0.9rem;
+            margin-top: 2rem;
         }
 
-        strong {
-            color: var(--primary-purple);
+        .beta-list p {
+            padding-left: 1rem;
+            border-left: 3px solid var(--brand-light);
         }
 
-        @media (max-width: 768px) {
-            .nav-links {
+        .beta-form {
+            display: grid;
+            gap: 1rem;
+            padding: 1.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        label {
+            display: grid;
+            gap: 0.45rem;
+            color: rgba(255, 255, 255, 0.84);
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            min-height: 48px;
+            padding: 0.85rem 0.95rem;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 8px;
+            background: rgba(5, 5, 6, 0.72);
+            color: var(--text);
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 118px;
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--cyan);
+            outline: 3px solid rgba(91, 214, 255, 0.18);
+        }
+
+        .submit-button {
+            min-height: 52px;
+            border: 0;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--brand-light), var(--violet));
+            color: var(--text);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 900;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .submit-button:hover,
+        .submit-button:focus-visible {
+            background: #91e7ff;
+            transform: translateY(-2px);
+        }
+
+        .form-note {
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        footer {
+            padding: 2rem 1.25rem;
+            border-top: 1px solid var(--line);
+            background: #030304;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1180px;
+            margin: 0 auto;
+            gap: 1rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 980px) {
+            .feature-grid,
+            .workflow-grid,
+            .audience-grid,
+            .beta-layout {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .preview-workspace {
+                grid-template-columns: 110px 1fr;
+            }
+
+            .preview-panel.right {
+                display: none;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .nav-content {
+                padding: 0.75rem 1rem;
+            }
+
+            .brand-logo {
+                width: 108px;
+                height: 32px;
+            }
+
+            .nav-links > a:not(.nav-cta),
+            .nav-links > .social-links {
                 display: none;
             }
 
+            .hero {
+                min-height: 88vh;
+                padding-top: 5.75rem;
+                padding-bottom: 3rem;
+                text-align: left;
+            }
+
+            .hero-preview {
+                top: 6.2rem;
+                left: 67%;
+                width: 760px;
+                opacity: 0.18;
+            }
+
+            .hero-content {
+                max-width: 520px;
+            }
+
             .hero-logo {
-                width: 200px;
+                width: 230px;
+                height: 72px;
+                margin-bottom: 0.9rem;
             }
 
-            .tagline {
-                font-size: 1.5rem;
+            .hero-copy {
+                margin-left: 0;
+                margin-bottom: 1.25rem;
+                font-size: 1.02rem;
             }
 
-            .sub-tagline {
-                font-size: 1.2rem;
+            .hero-actions {
+                justify-content: flex-start;
+                margin-bottom: 0;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .proof-grid {
+                display: none;
+            }
+
+            .feature-grid,
+            .workflow-grid,
+            .audience-grid,
+            .beta-layout,
+            .form-row {
+                grid-template-columns: 1fr;
             }
 
             section {
-                padding: 3rem 1rem;
+                padding: 4rem 1rem;
+            }
+
+            .footer-content {
+                align-items: flex-start;
+                flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
-    <nav>
+    <nav aria-label="Primary navigation">
         <div class="nav-content">
-            <img src="./logo.png" alt="pixle.pro" class="logo">
+            <a href="#top" aria-label="Pixle.Pro home">
+                <img src="./logo.png" alt="Pixle.Pro" class="brand-logo">
+            </a>
             <div class="nav-links">
                 <a href="#features">Features</a>
-                <a href="#audience">Who it's for</a>
-                <a href="#hero-logo">Join Waitlist</a>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/_pixle.pro/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
-                        <img src="./assets/images/social/Instagram_Glyph_Gradient.svg" alt="Instagram" class="social-icon">
-
+                <a href="#workflow">Workflow</a>
+                <a href="#audience">Use Cases</a>
+                <a href="#beta" class="nav-cta">Beta Access</a>
+                <div class="social-links" aria-label="Social links">
+                    <a href="https://www.instagram.com/_pixle.pro/" target="_blank" rel="noopener noreferrer" aria-label="Follow Pixle.Pro on Instagram">
+                        <img src="./assets/images/social/Instagram_Glyph_Gradient.svg" alt="" class="social-icon">
                     </a>
-                    <a href="https://linkedin.com/company/pixle-pro" target="_blank" rel="noopener noreferrer" aria-label="Connect with us on LinkedIn">
-                        <img src="./assets/images/social/LI-In-Bug.png" alt="LinkedIn" class="social-icon">
+                    <a href="https://linkedin.com/company/pixle-pro" target="_blank" rel="noopener noreferrer" aria-label="Connect with Pixle.Pro on LinkedIn">
+                        <img src="./assets/images/social/LI-In-Bug.png" alt="" class="social-icon">
                     </a>
-                    <a href="https://x.com/pixle_pro" target="_blank" rel="noopener noreferrer" aria-label="Connect with us on Twitter">
-                        <img src="./assets/images/social/twitter_logo.svg" alt="Twitter" class="social-icon">
+                    <a href="https://x.com/pixle_pro" target="_blank" rel="noopener noreferrer" aria-label="Follow Pixle.Pro on X">
+                        <img src="./assets/images/social/twitter_logo.svg" alt="" class="social-icon">
                     </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <img src="./logo.png" alt="pixle.pro" class="hero-logo" id="hero-logo">
-            <h1 class="tagline">From Idea to Distribution</h1>
-            <p class="sub-tagline">🚀 Revolutionizing 2D Animation with AI & Cloud</p>
-            
-            <form action="https://formspree.io/f/xpwzebdn" method="POST" class="waitlist-form" id="waitlist">
-                <input type="email" name="email" placeholder="Enter your email for early access" required class="waitlist-input">
-                <button type="submit" class="submit-button">Join the Revolution</button>
-            </form>
-        </div>
-    </section>
-
-    <section class="features" id="features">
-        <div class="section-content">
-            <h2>What is Pixle.pro?</h2>
-            <p>Pixle.pro is the <strong>next-generation</strong> animation platform, built for modern creators. <strong>AI-assisted asset generation, real-time collaboration, and a cloud-native workflow</strong> let you bring your animations to life—without the complexity.</p>
-            <p>🎨 <strong>Create, Rig, and Animate</strong> in one seamless environment. ☁️ <strong>Cloud-powered</strong>, work from anywhere with your team. 🖥️ <strong>AI-first</strong>, so you can focus on storytelling while automation handles the rest.</p>
-            
-            <h2>Why Pixle.pro?</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h3>AI-Powered Asset Creation</h3>
-                    <p>Skip the tedious work! Generate characters, backgrounds, and props with AI-assisted tools. Modify and refine with intuitive controls.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Smart Rigging & Tweening</h3>
-                    <p>Import existing rigged assets or use our <strong>AI-based auto-rigging</strong> to set up your characters in seconds.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Collaborate in Real-Time</h3>
-                    <p>Work with teams in a <strong>shared cloud environment</strong>—no more sending files back and forth.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Intuitive Timeline & Keyframes</h3>
-                    <p>Control motion with a professional-grade <strong>timeline editor</strong>. Animate effortlessly using keyframes, easing curves, and physics-based interactions.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Advanced Particle System</h3>
-                    <p>Create <strong>realistic snow, fire, smoke, and lighting effects</strong> with an intuitive particle engine.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>From Canvas to Distribution</h3>
-                    <p>Render animations into <strong>MP4, GIF, or WebM</strong>, and publish directly to YouTube, social media, or your studio pipeline.</p>
+    <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-preview" aria-hidden="true">
+                <div class="editor-preview">
+                    <div class="preview-bar">
+                        <span>Pixle.Pro Editor</span>
+                        <span>Scene 03 / 06</span>
+                    </div>
+                    <div class="preview-workspace">
+                        <div class="preview-panel">
+                            <div class="preview-pill"></div>
+                            <div class="preview-row"></div>
+                            <div class="preview-row"></div>
+                            <div class="preview-row"></div>
+                            <div class="preview-row"></div>
+                        </div>
+                        <div class="preview-canvas">
+                            <div class="scene-frame">
+                                <div class="scene-caption"></div>
+                                <div class="scene-character"></div>
+                            </div>
+                        </div>
+                        <div class="preview-panel right">
+                            <div class="preview-pill"></div>
+                            <div class="preview-swatch"></div>
+                            <div class="preview-swatch"></div>
+                            <div class="preview-swatch"></div>
+                        </div>
+                    </div>
+                    <div class="preview-timeline">
+                        <div class="timeline-labels">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="timeline-tracks">
+                            <div class="track"></div>
+                            <div class="track"></div>
+                            <div class="track"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="audience">
-        <div class="section-content">
-            <h2>Who is Pixle.pro For?</h2>
-            <div class="audience-grid">
-                <div class="audience-card">
-                    <h3>🎬 Studios & Animators</h3>
-                    <p>Full-featured cloud animation with professional tools.</p>
+            <div class="hero-content">
+                <img src="./logo.png" alt="Pixle.Pro" class="hero-logo">
+                <p class="eyebrow">Beta testers wanted</p>
+                <h1 id="hero-title"><span class="brand-gradient">From Idea to Animated Video</span></h1>
+                <p class="hero-copy">Pixle.Pro gives teams one browser workspace to create scenes, animate on a timeline, manage assets, leave comments, generate background and audio variants, and export finished videos.</p>
+                <div class="hero-actions">
+                    <a href="#beta" class="button primary">Apply for Beta Testing</a>
+                    <a href="#features" class="button secondary">Explore Features</a>
                 </div>
-                <div class="audience-card">
-                    <h3>🎨 Indie Creators</h3>
-                    <p>AI-generated assets make it easier to create.</p>
-                </div>
-                <div class="audience-card">
-                    <h3>👾 Game Developers</h3>
-                    <p>Export rigged sprites for game-ready animations.</p>
-                </div>
-                <div class="audience-card">
-                    <h3>🛠️ Marketing Teams</h3>
-                    <p>Quickly produce engaging animated content.</p>
+                <div class="proof-grid" aria-label="Pixle.Pro highlights">
+                    <div class="proof-item">
+                        <strong>Create and rig scenes</strong>
+                        <span>Build animated compositions with Pixi-powered rendering.</span>
+                    </div>
+                    <div class="proof-item">
+                        <strong>Animate the timeline</strong>
+                        <span>Edit scenes, audio, text, effects, and characters in one flow.</span>
+                    </div>
+                    <div class="proof-item">
+                        <strong>Prepare to publish</strong>
+                        <span>Move from canvas edits to export and download.</span>
+                    </div>
                 </div>
             </div>
+        </section>
+
+        <section class="features" id="features" aria-labelledby="features-title">
+            <div class="section-content">
+                <p class="eyebrow">What Pixle.Pro does</p>
+                <h2 id="features-title">Create, animate, collaborate, and export in one place.</h2>
+                <p class="section-intro">Pixle.Pro is tuned around the real production loop: open a project, build scenes on a canvas, arrange timing on the timeline, manage media, gather feedback, and prepare the final video.</p>
+
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-marker"></div>
+                        <h3>Video Dashboard</h3>
+                        <p>Start from a project list, manage videos, and move quickly between production work and publishing screens.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-marker"></div>
+                        <h3>Canvas-Based Scene Editor</h3>
+                        <p>Create scenes with text, backgrounds, characters, animation assets, effects, and rigged character support.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-marker"></div>
+                        <h3>Timeline Editing</h3>
+                        <p>Arrange scenes, audio, visual layers, and timing in a timeline built for repeated editing.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-marker"></div>
+                        <h3>Asset Management</h3>
+                        <p>Organize backgrounds, audio, effects, icons, illustrations, and character assets in the same flow.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-marker"></div>
+                        <h3>Assisted Backgrounds and Audio</h3>
+                        <p>Generate supporting backgrounds and audio to speed up concepts, revisions, and production variants.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-marker"></div>
+                        <h3>Comments and Collaboration</h3>
+                        <p>Test comments, collaboration wiring, and realtime messaging hooks with your team.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="workflow" id="workflow" aria-labelledby="workflow-title">
+            <div class="section-content">
+                <p class="eyebrow">Creation flow</p>
+                <h2 id="workflow-title">From idea to distribution, without leaving the browser.</h2>
+                <div class="workflow-grid">
+                    <article class="workflow-card">
+                        <h3>Plan</h3>
+                        <p>Create or open a video project and organize the first scenes.</p>
+                    </article>
+                    <article class="workflow-card">
+                        <h3>Create</h3>
+                        <p>Add characters, text, backgrounds, effects, audio, and generated media.</p>
+                    </article>
+                    <article class="workflow-card">
+                        <h3>Animate</h3>
+                        <p>Shape timing, scene order, audio, and animation details on the timeline.</p>
+                    </article>
+                    <article class="workflow-card">
+                        <h3>Publish</h3>
+                        <p>Move into export, download, and publishing preparation when the video is ready.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="audience" id="audience" aria-labelledby="audience-title">
+            <div class="section-content">
+                <p class="eyebrow">Use cases</p>
+                <h2 id="audience-title">Useful feedback comes from real production habits.</h2>
+                <div class="audience-grid">
+                    <article class="audience-card">
+                        <h3>Animators</h3>
+                        <p>Test scene editing, timing, visual layers, and character workflows.</p>
+                    </article>
+                    <article class="audience-card">
+                        <h3>Creators</h3>
+                        <p>Turn scripts, concepts, and short-form ideas into exportable videos.</p>
+                    </article>
+                    <article class="audience-card">
+                        <h3>Marketing Teams</h3>
+                        <p>Create reusable animated content for campaigns, explainers, and product stories.</p>
+                    </article>
+                    <article class="audience-card">
+                        <h3>Product Teams</h3>
+                        <p>Prototype narrative videos, onboarding clips, and feature walkthroughs.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="beta" id="beta" aria-labelledby="beta-title">
+            <div class="section-content beta-layout">
+                <div>
+                    <p class="eyebrow">Beta testing access</p>
+                    <h2 id="beta-title">Join the Pixle.Pro beta and help tune the creation workflow.</h2>
+                    <p class="section-intro">We are inviting beta users who can try real animated video workflows and share practical feedback on the editor, collaboration, assisted media generation, and export quality.</p>
+                    <div class="beta-list">
+                        <p>Best fit: creators, animators, educators, marketing teams, and product teams who make video regularly.</p>
+                        <p>Helpful feedback: where the editor feels slow, where the timeline needs polish, and what makes export or collaboration easier.</p>
+                        <p>Beta access will be shared in small batches so feedback can be reviewed properly.</p>
+                    </div>
+                </div>
+
+                <form action="https://formspree.io/f/xpwzebdn" method="POST" class="beta-form">
+                    <input type="hidden" name="_subject" value="Pixle.Pro beta tester application">
+                    <div class="form-row">
+                        <label>
+                            Name
+                            <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+                        </label>
+                        <label>
+                            Email
+                            <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            Role
+                            <select name="role" required>
+                                <option value="" disabled selected>Select one</option>
+                                <option value="Animator">Animator</option>
+                                <option value="Creator">Creator</option>
+                                <option value="Marketing team">Marketing team</option>
+                                <option value="Product team">Product team</option>
+                                <option value="Educator">Educator</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </label>
+                        <label>
+                            Team size
+                            <select name="team_size" required>
+                                <option value="" disabled selected>Select one</option>
+                                <option value="Solo">Solo</option>
+                                <option value="2-5">2-5</option>
+                                <option value="6-20">6-20</option>
+                                <option value="21+">21+</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <label>
+                        What would you like to create or test?
+                        <textarea name="beta_use_case" placeholder="Short animations, social videos, explainer clips, team review workflows..." required></textarea>
+                    </label>
+
+                    <button type="submit" class="submit-button">Apply for Beta Testing</button>
+                    <p class="form-note">Your details will only be used to review beta access and contact you about Pixle.Pro testing.</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Pixle.Pro - browser-based animated video creation.</p>
+            <div class="social-links" aria-label="Social links">
+                <a href="https://www.instagram.com/_pixle.pro/" target="_blank" rel="noopener noreferrer" aria-label="Follow Pixle.Pro on Instagram">
+                    <img src="./assets/images/social/Instagram_Glyph_Gradient.svg" alt="" class="social-icon">
+                </a>
+                <a href="https://linkedin.com/company/pixle-pro" target="_blank" rel="noopener noreferrer" aria-label="Connect with Pixle.Pro on LinkedIn">
+                    <img src="./assets/images/social/LI-In-Bug.png" alt="" class="social-icon">
+                </a>
+                <a href="https://x.com/pixle_pro" target="_blank" rel="noopener noreferrer" aria-label="Follow Pixle.Pro on X">
+                    <img src="./assets/images/social/twitter_logo.svg" alt="" class="social-icon">
+                </a>
+            </div>
         </div>
-    </section>
-
-    <section>
-        <div class="section-content" style="text-align: center;">
-            <h2>Join the Revolution in 2D Animation</h2>
-            <p>Pixle.pro is built for <strong>the future of animation</strong>—one where <strong>AI, cloud, and creativity</strong> come together.</p>
-            <p><strong>Early access now open!</strong> Be among the first to experience it.</p>
-
-            <form action="https://formspree.io/f/xpwzebdn" method="POST" class="waitlist-form">
-                <input type="email" name="email" placeholder="Enter your email for early access" required class="waitlist-input">
-                <button type="submit" class="submit-button">Join the Waitlist</button>
-            </form>
-        </div>
-    </section>
-
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Intersection Observer for animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        });
-
-        document.querySelectorAll('.feature-card, .audience-card').forEach((card) => {
-            card.style.opacity = 0;
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.5s, transform 0.5s';
-            observer.observe(card);
-        });
-    </script>
+    </footer>
 </body>
 </html>
