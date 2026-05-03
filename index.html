@@ -151,6 +151,10 @@
             object-fit: contain;
         }
 
+        .youtube-icon {
+            color: var(--brand-light);
+        }
+
         main {
             overflow: hidden;
         }
@@ -658,7 +662,8 @@
             gap: 1rem;
         }
 
-        label {
+        label,
+        .form-control {
             display: grid;
             gap: 0.45rem;
             color: rgba(255, 255, 255, 0.84);
@@ -668,15 +673,23 @@
 
         input,
         select,
-        textarea {
+        textarea,
+        .select-trigger {
             width: 100%;
             min-height: 48px;
             padding: 0.85rem 0.95rem;
             border: 1px solid rgba(255, 255, 255, 0.22);
             border-radius: 8px;
-            background: rgba(5, 5, 6, 0.72);
+            background:
+                linear-gradient(145deg, rgba(123, 108, 158, 0.11), transparent 48%),
+                rgba(5, 5, 6, 0.78);
             color: var(--text);
             font: inherit;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: rgba(255, 255, 255, 0.38);
         }
 
         textarea {
@@ -686,9 +699,96 @@
 
         input:focus,
         select:focus,
-        textarea:focus {
-            border-color: var(--cyan);
-            outline: 3px solid rgba(91, 214, 255, 0.18);
+        textarea:focus,
+        .select-trigger:focus-visible {
+            border-color: var(--brand-light);
+            outline: 3px solid rgba(169, 151, 216, 0.2);
+        }
+
+        .custom-select {
+            position: relative;
+        }
+
+        .select-trigger {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            font-weight: 900;
+            text-align: left;
+        }
+
+        .select-value {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .custom-select:not(.has-value) .select-value {
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .select-chevron {
+            width: 10px;
+            height: 10px;
+            margin-left: 1rem;
+            border-right: 2px solid rgba(255, 255, 255, 0.88);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.88);
+            transform: rotate(45deg) translateY(-2px);
+            transition: transform 0.2s ease;
+            flex: 0 0 auto;
+        }
+
+        .custom-select.open .select-chevron {
+            transform: rotate(225deg) translate(-2px, -1px);
+        }
+
+        .select-menu {
+            position: absolute;
+            top: calc(100% + 0.45rem);
+            right: 0;
+            left: 0;
+            z-index: 20;
+            display: none;
+            gap: 0.22rem;
+            padding: 0.4rem;
+            border: 1px solid rgba(169, 151, 216, 0.38);
+            border-radius: 8px;
+            background:
+                linear-gradient(145deg, rgba(123, 108, 158, 0.24), rgba(12, 12, 16, 0.98)),
+                #111116;
+            box-shadow: 0 22px 44px rgba(0, 0, 0, 0.42), 0 0 36px rgba(123, 108, 158, 0.18);
+        }
+
+        .custom-select.open .select-menu {
+            display: grid;
+        }
+
+        .select-option {
+            min-height: 40px;
+            padding: 0.7rem 0.8rem;
+            border: 0;
+            border-radius: 6px;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.84);
+            cursor: pointer;
+            font: inherit;
+            font-weight: 800;
+            text-align: left;
+            transition: background 0.18s ease, color 0.18s ease;
+        }
+
+        .select-option:hover,
+        .select-option:focus-visible,
+        .select-option[aria-selected="true"] {
+            background: rgba(169, 151, 216, 0.22);
+            color: var(--text);
+            outline: none;
+        }
+
+        .custom-select.has-error .select-trigger {
+            border-color: var(--brand-light);
+            box-shadow: 0 0 0 3px rgba(169, 151, 216, 0.2);
         }
 
         .submit-button {
@@ -705,7 +805,7 @@
 
         .submit-button:hover,
         .submit-button:focus-visible {
-            background: #91e7ff;
+            background: linear-gradient(135deg, #c3b4ef, var(--brand));
             transform: translateY(-2px);
         }
 
@@ -845,6 +945,11 @@
                     </a>
                     <a href="https://x.com/pixle_pro" target="_blank" rel="noopener noreferrer" aria-label="Follow Pixle.Pro on X">
                         <img src="./assets/images/social/twitter_logo.svg" alt="" class="social-icon">
+                    </a>
+                    <a href="https://www.youtube.com/@pixleprostudio" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to Pixle.Pro on YouTube">
+                        <svg class="social-icon youtube-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"></path>
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -1039,28 +1144,40 @@
                     </div>
 
                     <div class="form-row">
-                        <label>
-                            Role
-                            <select name="role" required>
-                                <option value="" disabled selected>Select one</option>
-                                <option value="Animator">Animator</option>
-                                <option value="Creator">Creator</option>
-                                <option value="Marketing team">Marketing team</option>
-                                <option value="Product team">Product team</option>
-                                <option value="Educator">Educator</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </label>
-                        <label>
-                            Team size
-                            <select name="team_size" required>
-                                <option value="" disabled selected>Select one</option>
-                                <option value="Solo">Solo</option>
-                                <option value="2-5">2-5</option>
-                                <option value="6-20">6-20</option>
-                                <option value="21+">21+</option>
-                            </select>
-                        </label>
+                        <div class="form-control">
+                            <span id="role-label">Role</span>
+                            <div class="custom-select" data-custom-select>
+                                <input type="hidden" name="role" data-required-label="Role">
+                                <button type="button" class="select-trigger" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="role-label role-value">
+                                    <span class="select-value" id="role-value">Select one</span>
+                                    <span class="select-chevron" aria-hidden="true"></span>
+                                </button>
+                                <div class="select-menu" role="listbox" aria-labelledby="role-label">
+                                    <button type="button" class="select-option" role="option" data-value="Animator">Animator</button>
+                                    <button type="button" class="select-option" role="option" data-value="Creator">Creator</button>
+                                    <button type="button" class="select-option" role="option" data-value="Marketing team">Marketing team</button>
+                                    <button type="button" class="select-option" role="option" data-value="Product team">Product team</button>
+                                    <button type="button" class="select-option" role="option" data-value="Educator">Educator</button>
+                                    <button type="button" class="select-option" role="option" data-value="Other">Other</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <span id="team-size-label">Team size</span>
+                            <div class="custom-select" data-custom-select>
+                                <input type="hidden" name="team_size" data-required-label="Team size">
+                                <button type="button" class="select-trigger" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="team-size-label team-size-value">
+                                    <span class="select-value" id="team-size-value">Select one</span>
+                                    <span class="select-chevron" aria-hidden="true"></span>
+                                </button>
+                                <div class="select-menu" role="listbox" aria-labelledby="team-size-label">
+                                    <button type="button" class="select-option" role="option" data-value="Solo">Solo</button>
+                                    <button type="button" class="select-option" role="option" data-value="2-5">2-5</button>
+                                    <button type="button" class="select-option" role="option" data-value="6-20">6-20</button>
+                                    <button type="button" class="select-option" role="option" data-value="21+">21+</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <label>
@@ -1077,7 +1194,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>Pixle.Pro - browser-based animated video creation.</p>
+            <p>© 2026 Pixle.Pro - Create animated videos in your browser</p>
             <div class="social-links" aria-label="Social links">
                 <a href="https://www.instagram.com/_pixle.pro/" target="_blank" rel="noopener noreferrer" aria-label="Follow Pixle.Pro on Instagram">
                     <img src="./assets/images/social/Instagram_Glyph_Gradient.svg" alt="" class="social-icon">
@@ -1088,8 +1205,101 @@
                 <a href="https://x.com/pixle_pro" target="_blank" rel="noopener noreferrer" aria-label="Follow Pixle.Pro on X">
                     <img src="./assets/images/social/twitter_logo.svg" alt="" class="social-icon">
                 </a>
+                <a href="https://www.youtube.com/@pixleprostudio" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to Pixle.Pro on YouTube">
+                    <svg class="social-icon youtube-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"></path>
+                    </svg>
+                </a>
             </div>
         </div>
     </footer>
+    <script>
+        document.querySelectorAll('[data-custom-select]').forEach((select) => {
+            const trigger = select.querySelector('.select-trigger');
+            const hiddenInput = select.querySelector('input[type="hidden"]');
+            const valueLabel = select.querySelector('.select-value');
+            const options = Array.from(select.querySelectorAll('.select-option'));
+
+            const close = () => {
+                select.classList.remove('open');
+                trigger.setAttribute('aria-expanded', 'false');
+            };
+
+            const open = () => {
+                document.querySelectorAll('[data-custom-select].open').forEach((openSelect) => {
+                    if (openSelect !== select) {
+                        openSelect.classList.remove('open');
+                        openSelect.querySelector('.select-trigger').setAttribute('aria-expanded', 'false');
+                    }
+                });
+                select.classList.add('open');
+                trigger.setAttribute('aria-expanded', 'true');
+            };
+
+            trigger.addEventListener('click', () => {
+                select.classList.contains('open') ? close() : open();
+            });
+
+            trigger.addEventListener('keydown', (event) => {
+                if (event.key === 'ArrowDown' || event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    open();
+                    options[0]?.focus();
+                }
+            });
+
+            options.forEach((option, index) => {
+                option.setAttribute('aria-selected', 'false');
+
+                option.addEventListener('click', () => {
+                    hiddenInput.value = option.dataset.value;
+                    valueLabel.textContent = option.textContent;
+                    options.forEach((item) => item.setAttribute('aria-selected', String(item === option)));
+                    select.classList.add('has-value');
+                    select.classList.remove('has-error');
+                    close();
+                    trigger.focus();
+                });
+
+                option.addEventListener('keydown', (event) => {
+                    if (event.key === 'Escape') {
+                        close();
+                        trigger.focus();
+                    }
+
+                    if (event.key === 'ArrowDown') {
+                        event.preventDefault();
+                        options[Math.min(index + 1, options.length - 1)]?.focus();
+                    }
+
+                    if (event.key === 'ArrowUp') {
+                        event.preventDefault();
+                        options[Math.max(index - 1, 0)]?.focus();
+                    }
+                });
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            document.querySelectorAll('[data-custom-select].open').forEach((select) => {
+                if (!select.contains(event.target)) {
+                    select.classList.remove('open');
+                    select.querySelector('.select-trigger').setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        document.querySelector('.beta-form')?.addEventListener('submit', (event) => {
+            const emptySelect = Array.from(document.querySelectorAll('[data-custom-select]')).find((select) => {
+                return !select.querySelector('input[type="hidden"]').value;
+            });
+
+            if (emptySelect) {
+                event.preventDefault();
+                emptySelect.classList.add('has-error');
+                emptySelect.querySelector('.select-trigger').focus();
+            }
+        });
+    </script>
 </body>
 </html>
