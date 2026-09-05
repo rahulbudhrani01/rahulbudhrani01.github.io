@@ -3,19 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixle.Pro - From Idea to Animated Video</title>
-    <meta name="description" content="Pixle.Pro is a browser-based video creation app for creating, editing, collaborating, and exporting animated videos with a canvas editor, timeline tools, assets, comments, and assisted background and audio generation.">
-    <meta name="keywords" content="Pixle.Pro, browser video editor, timeline video editor, animated video editor, canvas editor, collaborative video creation, AI backgrounds, AI audio generation">
-    <meta property="og:title" content="Pixle.Pro - From Idea to Animated Video">
-    <meta property="og:description" content="Create, edit, collaborate, and export animated videos in one browser workspace built around scenes, assets, timeline editing, comments, and assisted media generation.">
+
+    <title>Pixle.Pro — Build Animated Stories, Not Just Videos</title>
+
+    <meta
+        name="description"
+        content="Pixle.Pro is an AI-native animation studio for creators and storytellers. Build reusable characters, create animated scenes, and turn ideas into high-quality video in one creative workspace."
+    >
+
+    <meta
+        name="keywords"
+        content="Pixle.Pro, AI animation, animation studio, animated videos, character animation, character studio, AI storytelling, animation creators, kids animation"
+    >
+
+    <meta property="og:title" content="Pixle.Pro — Build Animated Stories, Not Just Videos">
+    <meta
+        property="og:description"
+        content="An AI-native animation studio for creators and storytellers. Build reusable characters, create animated scenes, and turn ideas into high-quality video."
+    >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.pixle.pro/">
-    <meta property="og:image" content="https://www.pixle.pro/logo.png">
+    <meta property="og:image" content="https://www.pixle.pro/logo-transparent.png">
+
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Pixle.Pro - From Idea to Animated Video">
-    <meta name="twitter:description" content="A browser workspace for animated video creation, timeline editing, collaboration, and export.">
+    <meta name="twitter:title" content="Pixle.Pro — Build Animated Stories, Not Just Videos">
+    <meta
+        name="twitter:description"
+        content="An AI-native animation studio for creators and storytellers."
+    >
+
     <link rel="canonical" href="https://www.pixle.pro/">
-    <link rel="icon" href="./favicon_io/icon.svg type=image/svg+xml">
+    <link rel="icon" href="./favicon_io/icon.svg" type="image/svg+xml">
 
     <style>
         :root {
@@ -23,15 +41,17 @@
             --surface: #111116;
             --surface-2: #17171e;
             --line: rgba(255, 255, 255, 0.13);
+
             --text: #ffffff;
             --muted: #bdb9ca;
+
             --brand: #7b6c9e;
             --brand-light: #a997d8;
             --purple: #8e7fb8;
             --violet: #6f5da0;
+
             --cyan: #5bd6ff;
             --green: #86efac;
-            --amber: #f2c94c;
         }
 
         * {
@@ -52,12 +72,9 @@
                 linear-gradient(25deg, rgba(91, 214, 255, 0.08), transparent 58%),
                 var(--bg);
             color: var(--text);
-            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, sans-serif;
             line-height: 1.55;
-        }
-
-        a {
-            color: inherit;
         }
 
         a {
@@ -160,7 +177,7 @@
         }
 
         section {
-            padding: 5rem 1.25rem;
+            padding: 5.5rem 1.25rem;
             scroll-margin-top: 82px;
         }
 
@@ -185,22 +202,17 @@
         }
 
         h1 {
-            max-width: 830px;
-            margin: 0 auto 1.25rem;
-            font-size: clamp(2.65rem, 7vw, 5rem);
-        }
-
-        .brand-gradient {
-            color: transparent;
-            background: linear-gradient(90deg, #ffffff 0%, #ddd5f3 44%, var(--brand-light) 72%, var(--brand) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
+            max-width: 900px;
+            margin: 0 auto 1.35rem;
+            font-size: clamp(2.8rem, 7vw, 5.2rem);
+            letter-spacing: -0.035em;
         }
 
         h2 {
-            max-width: 760px;
+            max-width: 800px;
             margin-bottom: 1rem;
             font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -0.025em;
         }
 
         h3 {
@@ -212,12 +224,29 @@
             color: var(--muted);
         }
 
+        .brand-gradient {
+            color: transparent;
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff 0%,
+                    #ddd5f3 44%,
+                    var(--brand-light) 72%,
+                    var(--brand) 100%
+                );
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        /* HERO */
+
         .hero {
             position: relative;
             display: flex;
             align-items: center;
-            min-height: 92vh;
-            padding-top: 7.5rem;
+            min-height: 88vh;
+            padding-top: 8rem;
+            padding-bottom: 5rem;
             text-align: center;
             isolation: isolate;
         }
@@ -225,205 +254,41 @@
         .hero::before {
             position: absolute;
             inset: 0;
-            z-index: -3;
+            z-index: -2;
             background:
-                linear-gradient(rgba(169, 151, 216, 0.06) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(169, 151, 216, 0.055) 1px, transparent 1px);
+                linear-gradient(
+                    rgba(169, 151, 216, 0.06) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(169, 151, 216, 0.055) 1px,
+                    transparent 1px
+                );
             background-size: 64px 64px;
             content: "";
-            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), transparent 88%);
-            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), transparent 88%);
+            -webkit-mask-image:
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.95), transparent 88%);
+            mask-image:
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.95), transparent 88%);
         }
 
-        .hero-preview {
+        .hero::after {
             position: absolute;
-            top: 7.1rem;
+            top: 15%;
             left: 50%;
-            z-index: -2;
-            width: min(1020px, 92vw);
-            min-height: 520px;
+            z-index: -1;
+            width: 720px;
+            height: 420px;
             transform: translateX(-50%);
-            opacity: 0.46;
+            background:
+                radial-gradient(
+                    ellipse,
+                    rgba(123, 108, 158, 0.18),
+                    transparent 68%
+                );
+            content: "";
             pointer-events: none;
-        }
-
-        .editor-preview {
-            display: grid;
-            grid-template-rows: 44px 1fr 96px;
-            min-height: 520px;
-            overflow: hidden;
-            border: 1px solid rgba(169, 151, 216, 0.28);
-            border-radius: 8px;
-            background:
-                linear-gradient(145deg, rgba(123, 108, 158, 0.12), transparent 42%),
-                rgba(17, 17, 22, 0.94);
-            box-shadow: 0 30px 110px rgba(0, 0, 0, 0.58), 0 0 70px rgba(123, 108, 158, 0.18);
-        }
-
-        .preview-bar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 1rem;
-            border-bottom: 1px solid var(--line);
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.82rem;
-            font-weight: 800;
-        }
-
-        .preview-workspace {
-            display: grid;
-            grid-template-columns: 150px 1fr 180px;
-            min-height: 380px;
-        }
-
-        .preview-panel {
-            padding: 1rem;
-            border-right: 1px solid var(--line);
-            background: rgba(0, 0, 0, 0.18);
-        }
-
-        .preview-panel.right {
-            border-right: 0;
-            border-left: 1px solid var(--line);
-        }
-
-        .preview-pill,
-        .preview-row,
-        .preview-swatch {
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.09);
-        }
-
-        .preview-pill {
-            width: 72%;
-            height: 10px;
-            margin-bottom: 0.9rem;
-        }
-
-        .preview-row {
-            height: 42px;
-            margin-bottom: 0.75rem;
-        }
-
-        .preview-swatch {
-            height: 74px;
-            margin-bottom: 0.75rem;
-        }
-
-        .preview-swatch:nth-child(2) {
-            background: rgba(91, 214, 255, 0.16);
-        }
-
-        .preview-swatch:nth-child(3) {
-            background: rgba(134, 239, 172, 0.14);
-        }
-
-        .preview-canvas {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 380px;
-            background:
-                linear-gradient(145deg, rgba(142, 127, 184, 0.22), transparent 43%),
-                linear-gradient(315deg, rgba(242, 201, 76, 0.12), transparent 45%),
-                #15151b;
-        }
-
-        .scene-frame {
-            position: relative;
-            width: min(500px, 74%);
-            aspect-ratio: 16 / 9;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            background:
-                linear-gradient(to top, rgba(134, 239, 172, 0.34), transparent 34%),
-                linear-gradient(140deg, rgba(91, 214, 255, 0.28), rgba(123, 108, 158, 0.34));
-        }
-
-        .scene-caption {
-            position: absolute;
-            left: 7%;
-            bottom: 11%;
-            width: 42%;
-            height: 18px;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.78);
-        }
-
-        .scene-character {
-            position: absolute;
-            right: 21%;
-            bottom: 18%;
-            width: 56px;
-            height: 96px;
-            border-radius: 28px 28px 16px 16px;
-            background: var(--purple);
-            box-shadow:
-                -34px 24px 0 -18px rgba(255, 255, 255, 0.72),
-                40px 16px 0 -18px rgba(255, 255, 255, 0.72);
-        }
-
-        .scene-character::before {
-            position: absolute;
-            top: -36px;
-            left: 9px;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: #f4cfad;
-            content: "";
-        }
-
-        .preview-timeline {
-            display: grid;
-            grid-template-columns: 150px 1fr;
-            gap: 1rem;
-            padding: 1rem;
-            border-top: 1px solid var(--line);
-            background: rgba(0, 0, 0, 0.24);
-        }
-
-        .timeline-labels,
-        .timeline-tracks {
-            display: grid;
-            gap: 0.55rem;
-        }
-
-        .timeline-labels span,
-        .track {
-            height: 14px;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .track {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .track::before {
-            position: absolute;
-            inset: 0 auto 0 0;
-            border-radius: inherit;
-            content: "";
-        }
-
-        .track:nth-child(1)::before {
-            width: 58%;
-            background: var(--cyan);
-        }
-
-        .track:nth-child(2)::before {
-            width: 42%;
-            background: var(--green);
-        }
-
-        .track:nth-child(3)::before {
-            width: 72%;
-            background: var(--purple);
         }
 
         .hero-content {
@@ -433,19 +298,25 @@
         }
 
         .hero-logo {
-            width: min(320px, 72vw);
-            height: 96px;
-            margin-bottom: 1.25rem;
-            object-fit: cover;
-            object-position: center 56%;
-            mix-blend-mode: screen;
+          display: block;
+          width: min(320px, 72vw);
+          height: auto;
+          margin: 0 auto 1.25rem;
+          object-fit: contain;
         }
 
         .hero-copy {
-            max-width: 700px;
+            max-width: 720px;
             margin: 0 auto 2rem;
             color: rgba(255, 255, 255, 0.86);
-            font-size: 1.16rem;
+            font-size: 1.18rem;
+        }
+
+        .hero-subcopy {
+            max-width: 620px;
+            margin: 0 auto 2rem;
+            color: var(--muted);
+            font-size: 0.95rem;
         }
 
         .hero-actions {
@@ -454,7 +325,7 @@
             align-items: center;
             justify-content: center;
             gap: 0.9rem;
-            margin-bottom: 2.1rem;
+            margin-bottom: 1rem;
         }
 
         .button {
@@ -467,7 +338,10 @@
             border-radius: 8px;
             font-weight: 900;
             text-decoration: none;
-            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
         }
 
         .button:hover,
@@ -476,9 +350,15 @@
         }
 
         .button.primary {
-            background: linear-gradient(135deg, var(--brand-light), var(--violet));
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--brand-light),
+                    var(--violet)
+                );
             color: var(--text);
-            box-shadow: 0 16px 36px rgba(123, 108, 158, 0.26);
+            box-shadow:
+                0 16px 36px rgba(123, 108, 158, 0.26);
         }
 
         .button.secondary {
@@ -487,90 +367,249 @@
             color: var(--text);
         }
 
-        .proof-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 0.8rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .proof-item,
-        .feature-card,
-        .workflow-card,
-        .audience-card {
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            background: linear-gradient(145deg, rgba(123, 108, 158, 0.08), rgba(255, 255, 255, 0.035));
-        }
-
-        .proof-item {
-            min-height: 76px;
-            padding: 0.9rem 1rem;
-            background: rgba(5, 5, 6, 0.64);
-            text-align: left;
-        }
-
-        .proof-item strong {
-            display: block;
-            color: var(--text);
-            font-size: 0.93rem;
-        }
-
-        .proof-item span {
-            display: block;
-            margin-top: 0.22rem;
-            color: var(--muted);
+        .hero-note {
+            margin-top: 1rem;
+            color: rgba(189, 185, 202, 0.78);
             font-size: 0.86rem;
         }
 
-        .features {
+        /* POSITIONING */
+
+        .positioning {
             border-top: 1px solid rgba(142, 127, 184, 0.24);
+            border-bottom: 1px solid rgba(142, 127, 184, 0.24);
             background:
-                linear-gradient(135deg, rgba(123, 108, 158, 0.12), transparent 36%),
+                linear-gradient(
+                    135deg,
+                    rgba(123, 108, 158, 0.12),
+                    transparent 42%
+                ),
                 var(--surface);
+        }
+
+        .positioning-inner {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .positioning-copy {
+            max-width: 520px;
+        }
+
+        .positioning-copy p {
+            font-size: 1.08rem;
+        }
+
+        .contrast-card {
+            padding: 1.5rem;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(123, 108, 158, 0.12),
+                    rgba(255, 255, 255, 0.035)
+                );
+        }
+
+        .contrast-row {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .contrast-row + .contrast-row {
+            border-top: 1px solid var(--line);
+        }
+
+        .contrast-label {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .contrast-value {
+            color: #fff;
+            font-size: 0.98rem;
+            font-weight: 800;
+        }
+
+        .contrast-arrow {
+            color: var(--brand-light);
+            font-size: 1.2rem;
+        }
+
+        /* CORE PRODUCT */
+
+        .product {
+            background: #080809;
         }
 
         .section-intro {
             max-width: 760px;
-            margin-bottom: 2rem;
+            margin-bottom: 2.2rem;
             font-size: 1.04rem;
         }
 
-        .feature-grid {
+        .product-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 1rem;
         }
 
-        .feature-card {
-            min-height: 185px;
-            padding: 1.25rem;
+        .product-card {
+            min-height: 250px;
+            padding: 1.5rem;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(123, 108, 158, 0.09),
+                    rgba(255, 255, 255, 0.035)
+                );
         }
 
-        .feature-marker {
+        .product-marker {
             width: 34px;
             height: 6px;
-            margin-bottom: 1.1rem;
+            margin-bottom: 1.2rem;
             border-radius: 8px;
             background: var(--brand-light);
         }
 
-        .feature-card:nth-child(2) .feature-marker,
-        .feature-card:nth-child(5) .feature-marker {
+        .product-card:nth-child(2) .product-marker {
             background: var(--cyan);
         }
 
-        .feature-card:nth-child(3) .feature-marker,
-        .feature-card:nth-child(6) .feature-marker {
+        .product-card:nth-child(3) .product-marker {
             background: var(--green);
         }
 
-        .feature-card p,
-        .workflow-card p,
-        .audience-card p {
+        .product-card p {
             font-size: 0.96rem;
         }
+
+        .product-list {
+            display: grid;
+            gap: 0.45rem;
+            margin-top: 1.1rem;
+            list-style: none;
+        }
+
+        .product-list li {
+            position: relative;
+            padding-left: 1.15rem;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.88rem;
+        }
+
+        .product-list li::before {
+            position: absolute;
+            left: 0;
+            top: 0.55rem;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--brand-light);
+            content: "";
+        }
+
+        /* PERSISTENT IP */
+
+        .ip {
+            background:
+                linear-gradient(
+                    150deg,
+                    rgba(123, 108, 158, 0.14),
+                    transparent 35%
+                ),
+                var(--surface);
+        }
+
+        .ip-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .ip-copy {
+            max-width: 580px;
+        }
+
+        .ip-copy p {
+            font-size: 1.08rem;
+        }
+
+        .universe-card {
+            position: relative;
+            padding: 1.5rem;
+            border: 1px solid rgba(169, 151, 216, 0.28);
+            border-radius: 12px;
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(169, 151, 216, 0.14),
+                    transparent 40%
+                ),
+                rgba(5, 5, 6, 0.6);
+            box-shadow:
+                0 24px 70px rgba(0, 0, 0, 0.28);
+        }
+
+        .universe-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .universe-name {
+            color: #fff;
+            font-weight: 900;
+        }
+
+        .universe-status {
+            color: var(--green);
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+
+        .universe-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .universe-item {
+            padding: 1rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.035);
+        }
+
+        .universe-item strong {
+            display: block;
+            margin-bottom: 0.2rem;
+            color: #fff;
+            font-size: 0.88rem;
+        }
+
+        .universe-item span {
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+
+        /* WORKFLOW */
 
         .workflow {
             background: #080809;
@@ -580,52 +619,139 @@
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 1rem;
-            counter-reset: workflow;
         }
 
         .workflow-card {
-            min-height: 170px;
-            padding: 1.25rem;
-            counter-increment: workflow;
+            min-height: 190px;
+            padding: 1.3rem;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(123, 108, 158, 0.08),
+                    rgba(255, 255, 255, 0.025)
+                );
         }
 
-        .workflow-card::before {
+        .workflow-number {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
-            margin-bottom: 1.15rem;
+            width: 34px;
+            height: 34px;
+            margin-bottom: 1.1rem;
             border: 1px solid rgba(255, 255, 255, 0.22);
             border-radius: 8px;
             color: var(--brand-light);
-            content: counter(workflow);
             font-weight: 900;
         }
+
+        .workflow-card p {
+            font-size: 0.92rem;
+        }
+
+        /* WHO */
 
         .audience {
             border-top: 1px solid rgba(142, 127, 184, 0.24);
             border-bottom: 1px solid rgba(142, 127, 184, 0.24);
             background:
-                linear-gradient(150deg, rgba(123, 108, 158, 0.12), transparent 34%),
+                linear-gradient(
+                    150deg,
+                    rgba(123, 108, 158, 0.12),
+                    transparent 34%
+                ),
                 var(--surface-2);
         }
 
         .audience-grid {
             display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 1rem;
         }
 
         .audience-card {
-            min-height: 150px;
-            padding: 1.25rem;
+            min-height: 175px;
+            padding: 1.35rem;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(123, 108, 158, 0.08),
+                    rgba(255, 255, 255, 0.035)
+                );
         }
+
+        .audience-card p {
+            font-size: 0.92rem;
+        }
+
+        /* THESIS */
+
+        .thesis {
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    rgba(123, 108, 158, 0.16),
+                    transparent 65%
+                ),
+                #070708;
+            text-align: center;
+        }
+
+        .thesis h2 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .thesis-copy {
+            max-width: 720px;
+            margin: 0 auto 2rem;
+            font-size: 1.08rem;
+        }
+
+        .thesis-points {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .thesis-point {
+            padding: 1.25rem;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.035);
+        }
+
+        .thesis-point strong {
+            display: block;
+            margin-bottom: 0.35rem;
+            color: #fff;
+        }
+
+        .thesis-point span {
+            color: var(--muted);
+            font-size: 0.86rem;
+        }
+
+        /* BETA */
 
         .beta {
             background:
-                linear-gradient(135deg, rgba(123, 108, 158, 0.22), transparent 38%),
-                linear-gradient(250deg, rgba(91, 214, 255, 0.08), transparent 42%),
+                linear-gradient(
+                    135deg,
+                    rgba(123, 108, 158, 0.22),
+                    transparent 38%
+                ),
+                linear-gradient(
+                    250deg,
+                    rgba(91, 214, 255, 0.08),
+                    transparent 42%
+                ),
                 #070708;
         }
 
@@ -652,7 +778,7 @@
             gap: 1rem;
             padding: 1.25rem;
             border: 1px solid rgba(255, 255, 255, 0.16);
-            border-radius: 8px;
+            border-radius: 10px;
             background: rgba(255, 255, 255, 0.06);
         }
 
@@ -681,7 +807,11 @@
             border: 1px solid rgba(255, 255, 255, 0.22);
             border-radius: 8px;
             background:
-                linear-gradient(145deg, rgba(123, 108, 158, 0.11), transparent 48%),
+                linear-gradient(
+                    145deg,
+                    rgba(123, 108, 158, 0.11),
+                    transparent 48%
+                ),
                 rgba(5, 5, 6, 0.78);
             color: var(--text);
             font: inherit;
@@ -755,9 +885,15 @@
             border: 1px solid rgba(169, 151, 216, 0.38);
             border-radius: 8px;
             background:
-                linear-gradient(145deg, rgba(123, 108, 158, 0.24), rgba(12, 12, 16, 0.98)),
+                linear-gradient(
+                    145deg,
+                    rgba(123, 108, 158, 0.24),
+                    rgba(12, 12, 16, 0.98)
+                ),
                 #111116;
-            box-shadow: 0 22px 44px rgba(0, 0, 0, 0.42), 0 0 36px rgba(123, 108, 158, 0.18);
+            box-shadow:
+                0 22px 44px rgba(0, 0, 0, 0.42),
+                0 0 36px rgba(123, 108, 158, 0.18);
         }
 
         .custom-select.open .select-menu {
@@ -775,7 +911,9 @@
             font: inherit;
             font-weight: 800;
             text-align: left;
-            transition: background 0.18s ease, color 0.18s ease;
+            transition:
+                background 0.18s ease,
+                color 0.18s ease;
         }
 
         .select-option:hover,
@@ -795,17 +933,23 @@
             min-height: 52px;
             border: 0;
             border-radius: 8px;
-            background: linear-gradient(135deg, var(--brand-light), var(--violet));
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--brand-light),
+                    var(--violet)
+                );
             color: var(--text);
             cursor: pointer;
             font-size: 1rem;
             font-weight: 900;
-            transition: transform 0.2s ease, background 0.2s ease;
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
         }
 
         .submit-button:hover,
         .submit-button:focus-visible {
-            background: linear-gradient(135deg, #c3b4ef, var(--brand));
             transform: translateY(-2px);
         }
 
@@ -813,6 +957,8 @@
             color: var(--muted);
             font-size: 0.88rem;
         }
+
+        /* FOOTER */
 
         footer {
             padding: 2rem 1.25rem;
@@ -831,20 +977,29 @@
             font-size: 0.9rem;
         }
 
+        /* RESPONSIVE */
+
         @media (max-width: 980px) {
-            .feature-grid,
-            .workflow-grid,
-            .audience-grid,
+            .positioning-inner,
+            .ip-grid,
             .beta-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .product-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
-            .preview-workspace {
-                grid-template-columns: 110px 1fr;
+            .workflow-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
-            .preview-panel.right {
-                display: none;
+            .audience-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .thesis-points {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -865,53 +1020,50 @@
 
             .hero {
                 min-height: 88vh;
-                padding-top: 5.75rem;
+                padding-top: 6rem;
                 padding-bottom: 3rem;
                 text-align: left;
             }
 
-            .hero-preview {
-                top: 6.2rem;
-                left: 67%;
-                width: 760px;
-                opacity: 0.18;
-            }
-
             .hero-content {
-                max-width: 520px;
+                max-width: 560px;
             }
 
             .hero-logo {
                 width: 230px;
                 height: 72px;
-                margin-bottom: 0.9rem;
+                margin-left: -8px;
             }
 
-            .hero-copy {
+            h1 {
                 margin-left: 0;
-                margin-bottom: 1.25rem;
-                font-size: 1.02rem;
+                margin-right: 0;
+            }
+
+            .hero-copy,
+            .hero-subcopy {
+                margin-left: 0;
+                margin-right: 0;
             }
 
             .hero-actions {
                 justify-content: flex-start;
-                margin-bottom: 0;
             }
 
             .button {
                 width: 100%;
             }
 
-            .proof-grid {
-                display: none;
-            }
-
-            .feature-grid,
+            .product-grid,
             .workflow-grid,
             .audience-grid,
-            .beta-layout,
             .form-row {
                 grid-template-columns: 1fr;
+            }
+
+            .positioning-inner,
+            .ip-grid {
+                gap: 2rem;
             }
 
             section {
@@ -925,417 +1077,1267 @@
         }
     </style>
 </head>
+
 <body>
-    <nav aria-label="Primary navigation">
-        <div class="nav-content">
-            <a href="#top" aria-label="Pixle.Pro home">
-                <img src="./logo.png" alt="Pixle.Pro" class="brand-logo">
-            </a>
-            <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#workflow">Workflow</a>
-                <a href="#audience">Use Cases</a>
-                <a href="#beta" class="nav-cta">Beta Access</a>
-                <div class="social-links" aria-label="Social links">
-                    <a href="https://www.instagram.com/_pixle.pro/" target="_blank" rel="noopener noreferrer" aria-label="Follow Pixle.Pro on Instagram">
-                        <img src="./assets/images/social/Instagram_Glyph_Gradient.svg" alt="" class="social-icon">
-                    </a>
-                    <a href="https://linkedin.com/company/pixle-pro" target="_blank" rel="noopener noreferrer" aria-label="Connect with Pixle.Pro on LinkedIn">
-                        <img src="./assets/images/social/LI-In-Bug.png" alt="" class="social-icon">
-                    </a>
-                    <a href="https://x.com/pixle_pro" target="_blank" rel="noopener noreferrer" aria-label="Follow Pixle.Pro on X">
-                        <img src="./assets/images/social/twitter_logo.svg" alt="" class="social-icon">
-                    </a>
-                    <a href="https://www.youtube.com/@pixleprostudio" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to Pixle.Pro on YouTube">
-                        <svg class="social-icon youtube-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                            <path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-    <main id="top">
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="hero-preview" aria-hidden="true">
-                <div class="editor-preview">
-                    <div class="preview-bar">
-                        <span>Pixle.Pro Editor</span>
-                        <span>Scene 03 / 06</span>
-                    </div>
-                    <div class="preview-workspace">
-                        <div class="preview-panel">
-                            <div class="preview-pill"></div>
-                            <div class="preview-row"></div>
-                            <div class="preview-row"></div>
-                            <div class="preview-row"></div>
-                            <div class="preview-row"></div>
-                        </div>
-                        <div class="preview-canvas">
-                            <div class="scene-frame">
-                                <div class="scene-caption"></div>
-                                <div class="scene-character"></div>
-                            </div>
-                        </div>
-                        <div class="preview-panel right">
-                            <div class="preview-pill"></div>
-                            <div class="preview-swatch"></div>
-                            <div class="preview-swatch"></div>
-                            <div class="preview-swatch"></div>
-                        </div>
-                    </div>
-                    <div class="preview-timeline">
-                        <div class="timeline-labels">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <div class="timeline-tracks">
-                            <div class="track"></div>
-                            <div class="track"></div>
-                            <div class="track"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<nav aria-label="Primary navigation">
+    <div class="nav-content">
 
-            <div class="hero-content">
-                <img src="./logo.png" alt="Pixle.Pro" class="hero-logo">
-                <p class="eyebrow">Design Partners wanted</p>
-               <!-- HERO SECTION -->
-                <h1 id="hero-title"><span class="brand-gradient">Produce high-quality animation 10x faster.</span></h1>
-                <p class="hero-copy">Pixle Pro is an AI-powered animation platform designed to help studios reduce production time and cost—without compromising creative control.</p>
-                <div class="hero-actions">
-                    <a href="#beta" class="button primary">Apply as a Design Partner</a>
-                    <a href="#features" class="button secondary">Explore Features</a>
-                </div>
-                <p style="margin-top:10px; color:#bdb9ca;">Currently piloting with select animation studios.</p>
+        <a href="#top" aria-label="Pixle.Pro home">
+            <img
+                src="./logo-transparent.png"
+                alt="Pixle.Pro"
+                class="brand-logo"
+            >
+        </a>
 
-                <div class="proof-grid" aria-label="Pixle.Pro highlights">
-                    <div class="proof-item">
-                        <strong>Create and rig scenes</strong>
-                        <span>Build animated compositions with Pixi-powered rendering.</span>
-                    </div>
-                    <div class="proof-item">
-                        <strong>Animate the timeline</strong>
-                        <span>Edit scenes, audio, text, effects, and characters in one flow.</span>
-                    </div>
-                    <div class="proof-item">
-                        <strong>Prepare to publish</strong>
-                        <span>Move from canvas edits to export and download.</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="nav-links">
 
-        <!-- NEW OUTCOME SECTION -->
-        <section class="features">
-            <div class="section-content">
-                <p class="eyebrow">Why studios are switching to Pixle.Pro</p>
-                <h2>Built to scale animation production.</h2>
-                <p class="section-intro">
-                    Already being tested with select animation studios to improve speed, cost efficiency, and production scalability.
-                </p>
+            <a href="#product">Product</a>
+            <a href="#characters">Characters</a>
+            <a href="#workflow">Workflow</a>
+            <a href="#beta" class="nav-cta">Design Partners</a>
 
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <h3>Reduce production timelines</h3>
-                        <p>Cut animation turnaround from weeks to days by streamlining your production workflow.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <h3>Lower cost per video</h3>
-                        <p>Reduce production costs without increasing team size or compromising on quality.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <h3>Scale output without scaling team</h3>
-                        <p>Produce more videos without hiring additional animators or expanding your pipeline.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <h3>Adopt AI without disruption</h3>
-                        <p>Integrate AI-assisted workflows into your pipeline without breaking existing processes.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="features" id="features" aria-labelledby="features-title">
-            <div class="section-content">
-                <p class="eyebrow">What Pixle.Pro does</p>
-                <h2 id="features-title">Create, animate, collaborate, and export in one place.</h2>
-                <p class="section-intro">Pixle Pro brings your entire animation workflow into one platform — from scene creation to timeline editing, collaboration, and final export.</p>
-
-                <div class="feature-grid">
-                    <article class="feature-card">
-                        <div class="feature-marker"></div>
-                        <h3>Video Dashboard</h3>
-                        <p>Start from a project list, manage videos, and move quickly between production work and publishing screens.</p>
-                    </article>
-                    <article class="feature-card">
-                        <div class="feature-marker"></div>
-                        <h3>Canvas-Based Scene Editor</h3>
-                        <p>Create scenes with text, backgrounds, characters, animation assets, effects, and rigged character support.</p>
-                    </article>
-                    <article class="feature-card">
-                        <div class="feature-marker"></div>
-                        <h3>Timeline Editing</h3>
-                        <p>Arrange scenes, audio, visual layers, and timing in a timeline built for repeated editing.</p>
-                    </article>
-                    <article class="feature-card">
-                        <div class="feature-marker"></div>
-                        <h3>Asset Management</h3>
-                        <p>Organize backgrounds, audio, effects, icons, illustrations, and character assets in the same flow.</p>
-                    </article>
-                    <article class="feature-card">
-                        <div class="feature-marker"></div>
-                        <h3>Assisted Backgrounds and Audio</h3>
-                        <p>Generate supporting backgrounds and audio to speed up concepts, revisions, and production variants.</p>
-                    </article>
-                    <article class="feature-card">
-                        <div class="feature-marker"></div>
-                        <h3>Comments and Collaboration</h3>
-                        <p>Test comments, collaboration wiring, and realtime messaging hooks with your team.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="workflow" id="workflow" aria-labelledby="workflow-title">
-            <div class="section-content">
-                <p class="eyebrow">Creation flow</p>
-                <h2 id="workflow-title">From idea to distribution, without leaving the browser.</h2>
-                <div class="workflow-grid">
-                    <article class="workflow-card">
-                        <h3>Plan</h3>
-                        <p>Create or open a video project and organize the first scenes.</p>
-                    </article>
-                    <article class="workflow-card">
-                        <h3>Create</h3>
-                        <p>Add characters, text, backgrounds, effects, audio, and generated media.</p>
-                    </article>
-                    <article class="workflow-card">
-                        <h3>Animate</h3>
-                        <p>Shape timing, scene order, audio, and animation details on the timeline.</p>
-                    </article>
-                    <article class="workflow-card">
-                        <h3>Publish</h3>
-                        <p>Move into export, download, and publishing preparation when the video is ready.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="audience" id="audience" aria-labelledby="audience-title">
-            <div class="section-content">
-                <p class="eyebrow">Use cases</p>
-                <h2 id="audience-title">Useful feedback comes from real production habits.</h2>
-                <div class="audience-grid">
-                    <article class="audience-card">
-                        <h3>Animators</h3>
-                        <p>Test scene editing, timing, visual layers, and character workflows.</p>
-                    </article>
-                    <article class="audience-card">
-                        <h3>Creators</h3>
-                        <p>Turn scripts, concepts, and short-form ideas into exportable videos.</p>
-                    </article>
-                    <article class="audience-card">
-                        <h3>Marketing Teams</h3>
-                        <p>Create reusable animated content for campaigns, explainers, and product stories.</p>
-                    </article>
-                    <article class="audience-card">
-                        <h3>Product Teams</h3>
-                        <p>Prototype narrative videos, onboarding clips, and feature walkthroughs.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="beta" id="beta" aria-labelledby="beta-title">
-            <div class="section-content beta-layout">
-                <div>
-                    <p class="eyebrow">Beta testing access</p>
-                    <h2 id="beta-title">Work with us as a design partner</h2>
-                    <p class="section-intro">We’re working with a small group of animation studios to shape Pixle Pro. If you're actively producing animation and want to improve speed, cost efficiency, and scalability, we’d love to collaborate.</p>
-                    <div class="beta-list">
-                        <p>Best fit: animation studios and teams producing content regularly.</p>
-                        <p>What we’re looking for: real production workflows, feedback on bottlenecks, and collaboration on improving the pipeline.</p>
-                        <p>What you get: early access, direct influence on the roadmap, and hands-on support from our team.</p>
-                    </div>
-                </div>
-
-                <form action="https://formspree.io/f/xpwzebdn" method="POST" class="beta-form">
-                    <input type="hidden" name="_subject" value="Pixle.Pro beta tester application">
-                    <div class="form-row">
-                        <label>
-                            Name
-                            <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
-                        </label>
-                        <label>
-                            Email
-                            <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
-                        </label>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-control">
-                            <span id="role-label">Role</span>
-                            <div class="custom-select" data-custom-select>
-                                <input type="hidden" name="role" data-required-label="Role">
-                                <button type="button" class="select-trigger" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="role-label role-value">
-                                    <span class="select-value" id="role-value">Select one</span>
-                                    <span class="select-chevron" aria-hidden="true"></span>
-                                </button>
-                                <div class="select-menu" role="listbox" aria-labelledby="role-label">
-                                    <button type="button" class="select-option" role="option" data-value="Animator">Animator</button>
-                                    <button type="button" class="select-option" role="option" data-value="Creator">Creator</button>
-                                    <button type="button" class="select-option" role="option" data-value="Marketing team">Marketing team</button>
-                                    <button type="button" class="select-option" role="option" data-value="Product team">Product team</button>
-                                    <button type="button" class="select-option" role="option" data-value="Educator">Educator</button>
-                                    <button type="button" class="select-option" role="option" data-value="Other">Other</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-control">
-                            <span id="team-size-label">Team size</span>
-                            <div class="custom-select" data-custom-select>
-                                <input type="hidden" name="team_size" data-required-label="Team size">
-                                <button type="button" class="select-trigger" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="team-size-label team-size-value">
-                                    <span class="select-value" id="team-size-value">Select one</span>
-                                    <span class="select-chevron" aria-hidden="true"></span>
-                                </button>
-                                <div class="select-menu" role="listbox" aria-labelledby="team-size-label">
-                                    <button type="button" class="select-option" role="option" data-value="Solo">Solo</button>
-                                    <button type="button" class="select-option" role="option" data-value="2-5">2-5</button>
-                                    <button type="button" class="select-option" role="option" data-value="6-20">6-20</button>
-                                    <button type="button" class="select-option" role="option" data-value="21+">21+</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <label>
-                        What would you like to create or test?
-                        <textarea name="beta_use_case" placeholder="Short animations, social videos, explainer clips, team review workflows..." required></textarea>
-                    </label>
-
-                    <button type="submit" class="submit-button">Apply as Design Partner</button>
-                    <p class="form-note">Your details will only be used to review beta access and contact you about Pixle.Pro testing.</p>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <p>© 2026 Pixle.Pro - Create animated videos in your browser</p>
             <div class="social-links" aria-label="Social links">
-                <a href="https://www.instagram.com/_pixle.pro/" target="_blank" rel="noopener noreferrer" aria-label="Follow Pixle.Pro on Instagram">
-                    <img src="./assets/images/social/Instagram_Glyph_Gradient.svg" alt="" class="social-icon">
+
+                <a
+                    href="https://www.instagram.com/_pixle.pro/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Follow Pixle.Pro on Instagram"
+                >
+                    <img
+                        src="./assets/images/social/Instagram_Glyph_Gradient.svg"
+                        alt=""
+                        class="social-icon"
+                    >
                 </a>
-                <a href="https://linkedin.com/company/pixle-pro" target="_blank" rel="noopener noreferrer" aria-label="Connect with Pixle.Pro on LinkedIn">
-                    <img src="./assets/images/social/LI-In-Bug.png" alt="" class="social-icon">
+
+                <a
+                    href="https://linkedin.com/company/pixle-pro"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Connect with Pixle.Pro on LinkedIn"
+                >
+                    <img
+                        src="./assets/images/social/LI-In-Bug.png"
+                        alt=""
+                        class="social-icon"
+                    >
                 </a>
-                <a href="https://x.com/pixle_pro" target="_blank" rel="noopener noreferrer" aria-label="Follow Pixle.Pro on X">
-                    <img src="./assets/images/social/twitter_logo.svg" alt="" class="social-icon">
+
+                <a
+                    href="https://x.com/pixle_pro"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Follow Pixle.Pro on X"
+                >
+                    <img
+                        src="./assets/images/social/twitter_logo.svg"
+                        alt=""
+                        class="social-icon"
+                    >
                 </a>
-                <a href="https://www.youtube.com/@pixleprostudio" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to Pixle.Pro on YouTube">
-                    <svg class="social-icon youtube-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                        <path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"></path>
+
+                <a
+                    href="https://www.youtube.com/@pixleprostudio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Subscribe to Pixle.Pro on YouTube"
+                >
+                    <svg
+                        class="social-icon youtube-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <path
+                            fill="currentColor"
+                            d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"
+                        ></path>
                     </svg>
                 </a>
+
             </div>
         </div>
-    </footer>
-    <script>
-        document.querySelectorAll('[data-custom-select]').forEach((select) => {
-            const trigger = select.querySelector('.select-trigger');
-            const hiddenInput = select.querySelector('input[type="hidden"]');
-            const valueLabel = select.querySelector('.select-value');
-            const options = Array.from(select.querySelectorAll('.select-option'));
+    </div>
+</nav>
+
+
+<main id="top">
+
+    <!-- HERO -->
+
+    <section class="hero" aria-labelledby="hero-title">
+
+        <div class="hero-content">
+
+            <img
+                src="./logo-transparent.png"
+                alt="Pixle.Pro"
+                class="hero-logo"
+            >
+
+            <p class="eyebrow">AI-native animation studio</p>
+
+            <h1 id="hero-title">
+                <span class="brand-gradient">
+                    Build animated stories, not just videos.
+                </span>
+            </h1>
+
+            <p class="hero-copy">
+                Pixle Pro is an AI-native animation studio for creators
+                and storytellers. Build reusable characters, create
+                animated scenes, and turn ideas into high-quality content
+                while keeping creative control.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#beta" class="button primary">
+                    Become a Design Partner
+                </a>
+
+                <a href="#product" class="button secondary">
+                    Explore Pixle Pro
+                </a>
+            </div>
+
+            <p class="hero-note">
+                Currently working with select animation creators and studios.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- POSITIONING -->
+
+    <section class="positioning">
+
+        <div class="section-content positioning-inner">
+
+            <div class="positioning-copy">
+
+                <p class="eyebrow">The problem</p>
+
+                <h2>
+                    Animation is still built like a traditional studio workflow.
+                </h2>
+
+                <p>
+                    Creating a single animated video can mean stitching together
+                    character design, rigging, animation, voice, backgrounds,
+                    editing, and review across multiple tools.
+                </p>
+
+                <br>
+
+                <p>
+                    Pixle brings that workflow into one AI-native creative
+                    workspace without taking control away from the creator.
+                </p>
+
+            </div>
+
+
+            <div class="contrast-card">
+
+                <div class="contrast-row">
+
+                    <div>
+                        <span class="contrast-label">Traditional</span>
+                    </div>
+
+                    <div class="contrast-arrow">→</div>
+
+                    <div>
+                        <span class="contrast-value">
+                            One connected workspace
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="contrast-row">
+
+                    <div>
+                        <span class="contrast-label">One-off assets</span>
+                    </div>
+
+                    <div class="contrast-arrow">→</div>
+
+                    <div>
+                        <span class="contrast-value">
+                            Reusable characters & worlds
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="contrast-row">
+
+                    <div>
+                        <span class="contrast-label">Manual production</span>
+                    </div>
+
+                    <div class="contrast-arrow">→</div>
+
+                    <div>
+                        <span class="contrast-value">
+                            AI-assisted creation
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCT -->
+
+    <section class="product" id="product">
+
+        <div class="section-content">
+
+            <p class="eyebrow">The product</p>
+
+            <h2>
+                Everything you need to turn an idea into an animated story.
+            </h2>
+
+            <p class="section-intro">
+                Pixle combines character creation, AI-assisted media generation,
+                scene composition, and timeline editing in one browser-based
+                workspace.
+            </p>
+
+
+            <div class="product-grid">
+
+                <article class="product-card">
+
+                    <div class="product-marker"></div>
+
+                    <h3>Character Studio</h3>
+
+                    <p>
+                        Create characters from your own artwork or images,
+                        rig them, give them a voice, and bring them into
+                        animated scenes.
+                    </p>
+
+                    <ul class="product-list">
+                        <li>Image-based characters</li>
+                        <li>Custom rigs</li>
+                        <li>Character voices</li>
+                        <li>Reusable across scenes</li>
+                    </ul>
+
+                </article>
+
+
+                <article class="product-card">
+
+                    <div class="product-marker"></div>
+
+                    <h3>AI-Assisted Creation</h3>
+
+                    <p>
+                        Use AI to accelerate the parts of production that
+                        traditionally take the most time.
+                    </p>
+
+                    <ul class="product-list">
+                        <li>Script assistance</li>
+                        <li>Background generation</li>
+                        <li>Audio generation</li>
+                        <li>Character video generation</li>
+                    </ul>
+
+                </article>
+
+
+                <article class="product-card">
+
+                    <div class="product-marker"></div>
+
+                    <h3>Creative Control</h3>
+
+                    <p>
+                        Bring everything together on a visual canvas and
+                        timeline while keeping control over the final result.
+                    </p>
+
+                    <ul class="product-list">
+                        <li>Scene composition</li>
+                        <li>Timeline editing</li>
+                        <li>Visual layers and effects</li>
+                        <li>Collaboration and review</li>
+                    </ul>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CHARACTERS / PERSISTENT IP -->
+
+    <section class="ip" id="characters">
+
+        <div class="section-content ip-grid">
+
+            <div class="ip-copy">
+
+                <p class="eyebrow">Your creative universe</p>
+
+                <h2>
+                    Create once. Build on it with every story.
+                </h2>
+
+                <p>
+                    Your characters, voices, animations and assets shouldn't
+                    disappear after one video.
+                </p>
+
+                <br>
+
+                <p>
+                    Pixle is built around reusable creative assets, so creators
+                    can build a consistent cast and visual world that carries
+                    from scene to scene and story to story.
+                </p>
+
+            </div>
+
+
+            <div class="universe-card">
+
+                <div class="universe-header">
+
+                    <span class="universe-name">
+                        Milo's Universe
+                    </span>
+
+                    <span class="universe-status">
+                        ● Active
+                    </span>
+
+                </div>
+
+
+                <div class="universe-grid">
+
+                    <div class="universe-item">
+                        <strong>Characters</strong>
+                        <span>Milo · Luna · Max</span>
+                    </div>
+
+                    <div class="universe-item">
+                        <strong>Voices</strong>
+                        <span>3 character voices</span>
+                    </div>
+
+                    <div class="universe-item">
+                        <strong>Animations</strong>
+                        <span>Walk · Wave · Jump</span>
+                    </div>
+
+                    <div class="universe-item">
+                        <strong>Environments</strong>
+                        <span>Home · School · Park</span>
+                    </div>
+
+                    <div class="universe-item">
+                        <strong>Episodes</strong>
+                        <span>Reusable across projects</span>
+                    </div>
+
+                    <div class="universe-item">
+                        <strong>Assets</strong>
+                        <span>Characters · Scenes · Music</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WORKFLOW -->
+
+    <section class="workflow" id="workflow">
+
+        <div class="section-content">
+
+            <p class="eyebrow">Creation flow</p>
+
+            <h2>
+                From story idea to finished episode.
+            </h2>
+
+            <p class="section-intro">
+                Use AI where it helps, and stay in control where creativity
+                matters.
+            </p>
+
+
+            <div class="workflow-grid">
+
+                <article class="workflow-card">
+
+                    <div class="workflow-number">1</div>
+
+                    <h3>Imagine</h3>
+
+                    <p>
+                        Start with a story, script, character idea, or
+                        creative concept.
+                    </p>
+
+                </article>
+
+
+                <article class="workflow-card">
+
+                    <div class="workflow-number">2</div>
+
+                    <h3>Build</h3>
+
+                    <p>
+                        Bring together characters, voices, environments,
+                        props, backgrounds and other creative assets.
+                    </p>
+
+                </article>
+
+
+                <article class="workflow-card">
+
+                    <div class="workflow-number">3</div>
+
+                    <h3>Animate</h3>
+
+                    <p>
+                        Compose scenes and shape timing, motion, audio and
+                        performances on the canvas and timeline.
+                    </p>
+
+                </article>
+
+
+                <article class="workflow-card">
+
+                    <div class="workflow-number">4</div>
+
+                    <h3>Refine</h3>
+
+                    <p>
+                        Collaborate, review, make final creative decisions,
+                        and export the finished story.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AUDIENCE -->
+
+    <section class="audience">
+
+        <div class="section-content">
+
+            <p class="eyebrow">Who we're building with</p>
+
+            <h2>
+                Built with creators who make animation repeatedly.
+            </h2>
+
+            <p class="section-intro">
+                We're starting with creators and small animation teams
+                producing recurring animated content—not one-off videos.
+            </p>
+
+
+            <div class="audience-grid">
+
+                <article class="audience-card">
+
+                    <h3>Animated YouTube Creators</h3>
+
+                    <p>
+                        Build recurring content around characters, stories,
+                        and worlds that can grow over time.
+                    </p>
+
+                </article>
+
+
+                <article class="audience-card">
+
+                    <h3>Kids & Educational Content</h3>
+
+                    <p>
+                        Create engaging animated stories, lessons, and
+                        recurring series without a traditional production
+                        pipeline.
+                    </p>
+
+                </article>
+
+
+                <article class="audience-card">
+
+                    <h3>Independent Animation Studios</h3>
+
+                    <p>
+                        Prototype and produce more content without
+                        proportionally expanding the production team.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FUTURE THESIS, WITHOUT REVEALING ROADMAP -->
+
+    <section class="thesis">
+
+        <div class="section-content">
+
+            <p class="eyebrow">Our thesis</p>
+
+            <h2>
+                The future of animation isn't just generation. It's creation.
+            </h2>
+
+            <p class="thesis-copy">
+                Today's AI can generate images, video, voices, and other
+                individual assets. We believe the bigger opportunity is
+                connecting those capabilities into a creative system that
+                understands the characters, stories, and worlds creators
+                are building.
+            </p>
+
+
+            <div class="thesis-points">
+
+                <div class="thesis-point">
+                    <strong>Context</strong>
+                    <span>
+                        Creative work should build on what came before.
+                    </span>
+                </div>
+
+                <div class="thesis-point">
+                    <strong>Consistency</strong>
+                    <span>
+                        Characters and worlds should remain recognizable
+                        across stories.
+                    </span>
+                </div>
+
+                <div class="thesis-point">
+                    <strong>Control</strong>
+                    <span>
+                        AI should accelerate creators, not replace their
+                        creative decisions.
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DESIGN PARTNERS -->
+
+    <section class="beta" id="beta">
+
+        <div class="section-content beta-layout">
+
+            <div>
+
+                <p class="eyebrow">
+                    Design partner program
+                </p>
+
+                <h2>
+                    Help shape the future of animation production.
+                </h2>
+
+                <p class="section-intro">
+                    We're partnering with a small number of animation
+                    creators and studios who produce content regularly.
+                </p>
+
+
+                <div class="beta-list">
+
+                    <p>
+                        <strong>Best fit:</strong>
+                        creators and animation teams producing recurring
+                        animated content.
+                    </p>
+
+                    <p>
+                        <strong>What we're looking for:</strong>
+                        real production workflows, bottlenecks, and honest
+                        feedback on where AI can save the most time.
+                    </p>
+
+                    <p>
+                        <strong>What you get:</strong>
+                        early access, direct access to our team, and influence
+                        over the product as we build it.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form
+                action="https://formspree.io/f/xpwzebdn"
+                method="POST"
+                class="beta-form"
+            >
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="Pixle.Pro design partner application"
+                >
+
+
+                <div class="form-row">
+
+                    <label>
+                        Name
+
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Your name"
+                            autocomplete="name"
+                            required
+                        >
+                    </label>
+
+
+                    <label>
+                        Email
+
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </label>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-control">
+
+                        <span id="role-label">
+                            What best describes you?
+                        </span>
+
+                        <div
+                            class="custom-select"
+                            data-custom-select
+                        >
+
+                            <input
+                                type="hidden"
+                                name="role"
+                                data-required-label="Role"
+                            >
+
+                            <button
+                                type="button"
+                                class="select-trigger"
+                                aria-haspopup="listbox"
+                                aria-expanded="false"
+                                aria-labelledby="role-label role-value"
+                            >
+
+                                <span
+                                    class="select-value"
+                                    id="role-value"
+                                >
+                                    Select one
+                                </span>
+
+                                <span
+                                    class="select-chevron"
+                                    aria-hidden="true"
+                                ></span>
+
+                            </button>
+
+
+                            <div
+                                class="select-menu"
+                                role="listbox"
+                                aria-labelledby="role-label"
+                            >
+
+                                <button
+                                    type="button"
+                                    class="select-option"
+                                    role="option"
+                                    data-value="Animation creator"
+                                >
+                                    Animation creator
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="select-option"
+                                    role="option"
+                                    data-value="Animation studio"
+                                >
+                                    Animation studio
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="select-option"
+                                    role="option"
+                                    data-value="YouTube creator"
+                                >
+                                    YouTube creator
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="select-option"
+                                    role="option"
+                                    data-value="Educator"
+                                >
+                                    Educator
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="select-option"
+                                    role="option"
+                                    data-value="Other"
+                                >
+                                    Other
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-control">
+
+                        <span id="team-size-label">
+                            Team size
+                        </span>
+
+                        <div
+                            class="custom-select"
+                            data-custom-select
+                        >
+
+                            <input
+                                type="hidden"
+                                name="team_size"
+                                data-required-label="Team size"
+                            >
+
+                            <button
+                                type="button"
+                                class="select-trigger"
+                                aria-haspopup="listbox"
+                                aria-expanded="false"
+                                aria-labelledby="team-size-label team-size-value"
+                            >
+
+                                <span
+                                    class="select-value"
+                                    id="team-size-value"
+                                >
+                                    Select one
+                                </span>
+
+                                <span
+                                    class="select-chevron"
+                                    aria-hidden="true"
+                                ></span>
+
+                            </button>
+
+
+                            <div
+                                class="select-menu"
+                                role="listbox"
+                                aria-labelledby="team-size-label"
+                            >
+
+                                <button
+                                    type="button"
+                                    class="select-option"
+                                    role="option"
+                                    data-value="Solo"
+                                >
+                                    Solo
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="select-option"
+                                    role="option"
+                                    data-value="2-5"
+                                >
+                                    2–5
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="select-option"
+                                    role="option"
+                                    data-value="6-20"
+                                >
+                                    6–20
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="select-option"
+                                    role="option"
+                                    data-value="21+"
+                                >
+                                    21+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <label>
+
+                    What are you producing today?
+
+                    <textarea
+                        name="beta_use_case"
+                        placeholder="Tell us about your animation workflow, what you produce, and what currently takes the most time..."
+                        required
+                    ></textarea>
+
+                </label>
+
+
+                <label>
+
+                    How often do you publish?
+
+                    <input
+                        type="text"
+                        name="publishing_frequency"
+                        placeholder="e.g. 2 videos/week, 10 episodes/month..."
+                    >
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+                    Apply as a Design Partner
+                </button>
+
+
+                <p class="form-note">
+                    Your details will only be used to review design partner
+                    access and contact you about Pixle.Pro.
+                </p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-content">
+
+        <p>
+            © 2026 Pixle.Pro — AI-native animation for creators
+        </p>
+
+        <div class="social-links" aria-label="Social links">
+
+            <a
+                href="https://www.instagram.com/_pixle.pro/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow Pixle.Pro on Instagram"
+            >
+                <img
+                    src="./assets/images/social/Instagram_Glyph_Gradient.svg"
+                    alt=""
+                    class="social-icon"
+                >
+            </a>
+
+            <a
+                href="https://linkedin.com/company/pixle-pro"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Connect with Pixle.Pro on LinkedIn"
+            >
+                <img
+                    src="./assets/images/social/LI-In-Bug.png"
+                    alt=""
+                    class="social-icon"
+                >
+            </a>
+
+            <a
+                href="https://x.com/pixle_pro"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow Pixle.Pro on X"
+            >
+                <img
+                    src="./assets/images/social/twitter_logo.svg"
+                    alt=""
+                    class="social-icon"
+                >
+            </a>
+
+            <a
+                href="https://www.youtube.com/@pixleprostudio"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Subscribe to Pixle.Pro on YouTube"
+            >
+                <svg
+                    class="social-icon youtube-icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    focusable="false"
+                >
+                    <path
+                        fill="currentColor"
+                        d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"
+                    ></path>
+                </svg>
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    document
+        .querySelectorAll('[data-custom-select]')
+        .forEach((select) => {
+
+            const trigger =
+                select.querySelector('.select-trigger');
+
+            const hiddenInput =
+                select.querySelector('input[type="hidden"]');
+
+            const valueLabel =
+                select.querySelector('.select-value');
+
+            const options =
+                Array.from(
+                    select.querySelectorAll('.select-option')
+                );
+
 
             const close = () => {
+
                 select.classList.remove('open');
-                trigger.setAttribute('aria-expanded', 'false');
+
+                trigger.setAttribute(
+                    'aria-expanded',
+                    'false'
+                );
+
             };
+
 
             const open = () => {
-                document.querySelectorAll('[data-custom-select].open').forEach((openSelect) => {
-                    if (openSelect !== select) {
-                        openSelect.classList.remove('open');
-                        openSelect.querySelector('.select-trigger').setAttribute('aria-expanded', 'false');
-                    }
-                });
+
+                document
+                    .querySelectorAll(
+                        '[data-custom-select].open'
+                    )
+                    .forEach((openSelect) => {
+
+                        if (openSelect !== select) {
+
+                            openSelect.classList.remove('open');
+
+                            openSelect
+                                .querySelector('.select-trigger')
+                                .setAttribute(
+                                    'aria-expanded',
+                                    'false'
+                                );
+                        }
+                    });
+
+
                 select.classList.add('open');
-                trigger.setAttribute('aria-expanded', 'true');
+
+                trigger.setAttribute(
+                    'aria-expanded',
+                    'true'
+                );
+
             };
 
-            trigger.addEventListener('click', () => {
-                select.classList.contains('open') ? close() : open();
-            });
 
-            trigger.addEventListener('keydown', (event) => {
-                if (event.key === 'ArrowDown' || event.key === 'Enter' || event.key === ' ') {
+            trigger.addEventListener(
+                'click',
+                () => {
+
+                    select.classList.contains('open')
+                        ? close()
+                        : open();
+
+                }
+            );
+
+
+            trigger.addEventListener(
+                'keydown',
+                (event) => {
+
+                    if (
+                        event.key === 'ArrowDown' ||
+                        event.key === 'Enter' ||
+                        event.key === ' '
+                    ) {
+
+                        event.preventDefault();
+
+                        open();
+
+                        options[0]?.focus();
+
+                    }
+
+                }
+            );
+
+
+            options.forEach(
+                (option, index) => {
+
+                    option.setAttribute(
+                        'aria-selected',
+                        'false'
+                    );
+
+
+                    option.addEventListener(
+                        'click',
+                        () => {
+
+                            hiddenInput.value =
+                                option.dataset.value;
+
+                            valueLabel.textContent =
+                                option.textContent;
+
+                            options.forEach(
+                                (item) => {
+
+                                    item.setAttribute(
+                                        'aria-selected',
+                                        String(item === option)
+                                    );
+
+                                }
+                            );
+
+                            select.classList.add(
+                                'has-value'
+                            );
+
+                            select.classList.remove(
+                                'has-error'
+                            );
+
+                            close();
+
+                            trigger.focus();
+
+                        }
+                    );
+
+
+                    option.addEventListener(
+                        'keydown',
+                        (event) => {
+
+                            if (event.key === 'Escape') {
+
+                                close();
+
+                                trigger.focus();
+
+                            }
+
+
+                            if (event.key === 'ArrowDown') {
+
+                                event.preventDefault();
+
+                                options[
+                                    Math.min(
+                                        index + 1,
+                                        options.length - 1
+                                    )
+                                ]?.focus();
+
+                            }
+
+
+                            if (event.key === 'ArrowUp') {
+
+                                event.preventDefault();
+
+                                options[
+                                    Math.max(
+                                        index - 1,
+                                        0
+                                    )
+                                ]?.focus();
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+        });
+
+
+    document.addEventListener(
+        'click',
+        (event) => {
+
+            document
+                .querySelectorAll(
+                    '[data-custom-select].open'
+                )
+                .forEach((select) => {
+
+                    if (!select.contains(event.target)) {
+
+                        select.classList.remove('open');
+
+                        select
+                            .querySelector('.select-trigger')
+                            .setAttribute(
+                                'aria-expanded',
+                                'false'
+                            );
+
+                    }
+
+                });
+
+        }
+    );
+
+
+    document
+        .querySelector('.beta-form')
+        ?.addEventListener(
+            'submit',
+            (event) => {
+
+                const emptySelect =
+                    Array.from(
+                        document.querySelectorAll(
+                            '[data-custom-select]'
+                        )
+                    ).find(
+                        (select) =>
+                            !select.querySelector(
+                                'input[type="hidden"]'
+                            ).value
+                    );
+
+
+                if (emptySelect) {
+
                     event.preventDefault();
-                    open();
-                    options[0]?.focus();
+
+                    emptySelect.classList.add(
+                        'has-error'
+                    );
+
+                    emptySelect
+                        .querySelector('.select-trigger')
+                        .focus();
+
                 }
-            });
 
-            options.forEach((option, index) => {
-                option.setAttribute('aria-selected', 'false');
-
-                option.addEventListener('click', () => {
-                    hiddenInput.value = option.dataset.value;
-                    valueLabel.textContent = option.textContent;
-                    options.forEach((item) => item.setAttribute('aria-selected', String(item === option)));
-                    select.classList.add('has-value');
-                    select.classList.remove('has-error');
-                    close();
-                    trigger.focus();
-                });
-
-                option.addEventListener('keydown', (event) => {
-                    if (event.key === 'Escape') {
-                        close();
-                        trigger.focus();
-                    }
-
-                    if (event.key === 'ArrowDown') {
-                        event.preventDefault();
-                        options[Math.min(index + 1, options.length - 1)]?.focus();
-                    }
-
-                    if (event.key === 'ArrowUp') {
-                        event.preventDefault();
-                        options[Math.max(index - 1, 0)]?.focus();
-                    }
-                });
-            });
-        });
-
-        document.addEventListener('click', (event) => {
-            document.querySelectorAll('[data-custom-select].open').forEach((select) => {
-                if (!select.contains(event.target)) {
-                    select.classList.remove('open');
-                    select.querySelector('.select-trigger').setAttribute('aria-expanded', 'false');
-                }
-            });
-        });
-
-        document.querySelector('.beta-form')?.addEventListener('submit', (event) => {
-            const emptySelect = Array.from(document.querySelectorAll('[data-custom-select]')).find((select) => {
-                return !select.querySelector('input[type="hidden"]').value;
-            });
-
-            if (emptySelect) {
-                event.preventDefault();
-                emptySelect.classList.add('has-error');
-                emptySelect.querySelector('.select-trigger').focus();
             }
-        });
-    </script>
+        );
+
+</script>
+
 </body>
 </html>
