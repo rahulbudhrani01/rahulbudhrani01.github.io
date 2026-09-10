@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Pixle.Pro — Build Animated Stories, Not Just Videos</title>
@@ -502,54 +501,11 @@
             background: #000;
         }
 
-        .sample-video a {
+        .sample-video iframe {
             display: block;
             width: 100%;
             height: 100%;
-            position: relative;
-        }
-
-        .sample-video img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform .45s ease, filter .45s ease;
-        }
-
-        .sample-card:hover .sample-video img {
-            transform: scale(1.025);
-            filter: brightness(.88);
-        }
-
-        .sample-play {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            display: grid;
-            place-items: center;
-            width: 68px;
-            height: 48px;
-            transform: translate(-50%, -50%);
-            border-radius: 13px;
-            background: #ff0033;
-            box-shadow: 0 8px 28px rgba(0,0,0,.35);
-            transition: transform .25s ease, background .25s ease;
-        }
-
-        .sample-play::after {
-            content: '';
-            width: 0;
-            height: 0;
-            margin-left: 4px;
-            border-top: 9px solid transparent;
-            border-bottom: 9px solid transparent;
-            border-left: 14px solid #fff;
-        }
-
-        .sample-card:hover .sample-play {
-            transform: translate(-50%, -50%) scale(1.08);
-            background: #ff1744;
+            border: 0;
         }
 
         .sample-info {
@@ -1382,10 +1338,13 @@
 
                 <article class="sample-card">
                     <div class="sample-video">
-                        <a href="https://youtu.be/8czRYu9uAmc" target="_blank" rel="noopener noreferrer" aria-label="Watch The King's Last Dawn on YouTube">
-                            <img src="https://img.youtube.com/vi/8czRYu9uAmc/maxresdefault.jpg" alt="The King's Last Dawn — Pixle" loading="lazy">
-                            <span class="sample-play" aria-hidden="true"></span>
-                        </a>
+                        <iframe
+                            src="https://www.youtube.com/embed/8czRYu9uAmc"
+                            title="The King's Last Dawn — Pixle"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                        ></iframe>
                     </div>
                     <div class="sample-info">
                         <h3>The King’s Last Dawn</h3>
@@ -1398,10 +1357,13 @@
 
                 <article class="sample-card">
                     <div class="sample-video">
-                        <a href="https://youtu.be/8cBlsA4oON0" target="_blank" rel="noopener noreferrer" aria-label="Watch Beyond the Last Story on YouTube">
-                            <img src="https://img.youtube.com/vi/8cBlsA4oON0/maxresdefault.jpg" alt="Beyond the Last Story — Pixle" loading="lazy">
-                            <span class="sample-play" aria-hidden="true"></span>
-                        </a>
+                        <iframe
+                            src="https://www.youtube.com/embed/8cBlsA4oON0"
+                            title="Beyond the Last Story — Pixle"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                        ></iframe>
                     </div>
                     <div class="sample-info">
                         <h3>Beyond the Last Story</h3>
@@ -1417,32 +1379,7 @@
     </section>
 
 
-    <!--
-                ADDITIONAL SAMPLE TEMPLATE:
 
-                <article class="sample-card">
-                    <div class="sample-video">
-                        <iframe
-                            src="https://www.youtube-nocookie.com/embed/VIDEO_ID?rel=0&origin=https%3A%2F%2Fwww.pixle.pro"
-                            title="Pixle.Pro animation sample"
-                            loading="lazy"
-                            allowfullscreen
-                        ></iframe>
-                    </div>
-                    <div class="sample-info">
-                        <h3>Sample Title</h3>
-                        <p>Short description of what this sample demonstrates.</p>
-                        <a
-                            class="sample-link"
-                            href="https://youtu.be/VIDEO_ID"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Watch on YouTube →
-                        </a>
-                    </div>
-                </article>
-                -->
 
             </div>
         </div>
