@@ -538,10 +538,12 @@
             text-decoration: underline;
         }
 
-        /* CORE PRODUCT */
+        /* PRODUCT FEATURE SHOWCASE */
 
         .product {
-            background: #080809;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(123, 108, 158, 0.10), transparent 55%),
+                #080809;
         }
 
         .section-intro {
@@ -550,68 +552,134 @@
             font-size: 1.04rem;
         }
 
-        .product-grid {
+        .feature-heading {
+            max-width: 760px;
+            margin: 0 auto 4.5rem;
+            text-align: center;
+        }
+
+        .feature-heading h2 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feature-heading .section-intro {
+            margin: 0 auto;
+        }
+
+        .feature-row {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 1rem;
+            grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+            gap: clamp(2rem, 5vw, 4.5rem);
+            align-items: center;
+            margin: 0 auto 5.5rem;
         }
 
-        .product-card {
-            min-height: 250px;
-            padding: 1.5rem;
-            border: 1px solid var(--line);
-            border-radius: 10px;
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(123, 108, 158, 0.09),
-                    rgba(255, 255, 255, 0.035)
-                );
+        .feature-row:last-of-type {
+            margin-bottom: 0;
         }
 
-        .product-marker {
-            width: 34px;
-            height: 6px;
-            margin-bottom: 1.2rem;
-            border-radius: 8px;
-            background: var(--brand-light);
+        .feature-row.reverse {
+            grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
         }
 
-        .product-card:nth-child(2) .product-marker {
-            background: var(--cyan);
+        .feature-row.reverse .feature-copy {
+            order: 2;
         }
 
-        .product-card:nth-child(3) .product-marker {
-            background: var(--green);
+        .feature-row.reverse .feature-visual {
+            order: 1;
         }
 
-        .product-card p {
-            font-size: 0.96rem;
+        .feature-copy {
+            max-width: 470px;
         }
 
-        .product-list {
+        .feature-eyebrow {
+            display: inline-block;
+            margin-bottom: 0.9rem;
+            color: var(--brand-light);
+            font-size: 0.78rem;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .feature-copy h3 {
+            margin-bottom: 1rem;
+            font-size: clamp(1.8rem, 3vw, 2.65rem);
+            line-height: 1.12;
+            letter-spacing: -0.03em;
+        }
+
+        .feature-copy p {
+            margin-bottom: 1.35rem;
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        .feature-benefits {
             display: grid;
-            gap: 0.45rem;
-            margin-top: 1.1rem;
+            gap: 0.7rem;
             list-style: none;
         }
 
-        .product-list li {
+        .feature-benefits li {
             position: relative;
-            padding-left: 1.15rem;
-            color: rgba(255, 255, 255, 0.72);
-            font-size: 0.88rem;
+            padding-left: 1.6rem;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.94rem;
         }
 
-        .product-list li::before {
+        .feature-benefits li::before {
             position: absolute;
+            top: 0;
             left: 0;
-            top: 0.55rem;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: var(--brand-light);
-            content: "";
+            color: var(--brand-light);
+            content: "✓";
+            font-weight: 900;
+        }
+
+        .feature-visual {
+            overflow: hidden;
+            border: 1px solid rgba(169, 151, 216, 0.28);
+            border-radius: 14px;
+            background: #100b20;
+            box-shadow: 0 20px 65px rgba(110, 65, 220, 0.14);
+        }
+
+        .feature-visual img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: contain;
+        }
+
+        .feature-cta {
+            margin: 1rem auto 0;
+            padding: 3rem 1.5rem;
+            border: 1px solid rgba(169, 151, 216, 0.25);
+            border-radius: 16px;
+            background: linear-gradient(
+                135deg,
+                rgba(123, 108, 158, 0.20),
+                rgba(91, 214, 255, 0.04)
+            );
+            text-align: center;
+        }
+
+        .feature-cta h3 {
+            margin-bottom: 0.8rem;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        .feature-cta p {
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-cta .hero-note {
+            margin: 1rem 0 0;
         }
 
         /* PERSISTENT IP */
@@ -1079,10 +1147,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .product-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
             .workflow-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
@@ -1097,6 +1161,40 @@
         }
 
         @media (max-width: 760px) {
+            .feature-heading {
+                margin-bottom: 3rem;
+                text-align: left;
+            }
+
+            .feature-heading h2 {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .feature-row,
+            .feature-row.reverse {
+                grid-template-columns: 1fr;
+                gap: 1.3rem;
+                margin-bottom: 3.5rem;
+            }
+
+            .feature-row.reverse .feature-copy,
+            .feature-row.reverse .feature-visual {
+                order: initial;
+            }
+
+            .feature-copy {
+                max-width: none;
+            }
+
+            .feature-copy h3 {
+                font-size: 1.8rem;
+            }
+
+            .feature-cta {
+                padding: 2rem 1rem;
+            }
+
             .nav-content {
                 padding: 0.75rem 1rem;
             }
@@ -1487,94 +1585,178 @@
     </section>
 
 
-    <!-- PRODUCT -->
+    <!-- PRODUCT FEATURES -->
 
     <section class="product" id="product">
-
         <div class="section-content">
 
-            <p class="eyebrow">The product</p>
+            <div class="feature-heading">
+                <p class="eyebrow">Explore Pixle</p>
+                <h2>Everything you need to create animated stories.</h2>
+                <p class="section-intro">
+                    From AI-powered animation to reusable characters and environments,
+                    Pixle brings your creative workflow together in one workspace.
+                </p>
+            </div>
 
-            <h2>
-                Everything you need to turn an idea into an animated story.
-            </h2>
-
-            <p class="section-intro">
-                Pixle combines character creation, AI-assisted media generation,
-                scene composition, and timeline editing in one browser-based
-                workspace.
-            </p>
-
-
-            <div class="product-grid">
-
-                <article class="product-card">
-
-                    <div class="product-marker"></div>
-
-                    <h3>Character Studio</h3>
-
+            <!-- FEATURE 1: CHARACTER STUDIO -->
+            <article class="feature-row">
+                <div class="feature-copy">
+                    <span class="feature-eyebrow">Character Studio</span>
+                    <h3>Same characters. Same voices. Every episode.</h3>
                     <p>
-                        Create characters from your own artwork or images,
-                        rig them, give them a voice, and bring them into
-                        animated scenes.
+                        Create reusable character identities, attach voice references,
+                        and keep your characters visually consistent across scenes,
+                        episodes, and stories.
                     </p>
-
-                    <ul class="product-list">
-                        <li>Image-based characters</li>
-                        <li>Custom rigs</li>
-                        <li>Character voices</li>
-                        <li>Reusable across scenes</li>
+                    <ul class="feature-benefits">
+                        <li>Create reusable character identities</li>
+                        <li>Attach voice references</li>
+                        <li>Reuse characters across episodes</li>
+                        <li>Maintain visual consistency</li>
                     </ul>
+                </div>
+                <div class="feature-visual">
+                    <img
+                        src="./assets/images/features/character-studio.webp"
+                        alt="Pixle Character Studio showing reusable animated characters and voice assets"
+                        width="1600"
+                        height="900"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </div>
+            </article>
 
-                </article>
-
-
-                <article class="product-card">
-
-                    <div class="product-marker"></div>
-
-                    <h3>AI-Assisted Creation</h3>
-
+            <!-- FEATURE 2: ENVIRONMENT STUDIO -->
+            <article class="feature-row reverse">
+                <div class="feature-copy">
+                    <span class="feature-eyebrow">Environment Studio</span>
+                    <h3>Build worlds you can revisit.</h3>
                     <p>
-                        Use AI to accelerate the parts of production that
-                        traditionally take the most time.
+                        Create reusable environments and preserve the visual identity
+                        of your stories. Save locations once and bring them back across
+                        scenes, episodes, and future videos.
                     </p>
-
-                    <ul class="product-list">
-                        <li>Script assistance</li>
-                        <li>Background generation</li>
-                        <li>Audio generation</li>
-                        <li>Character video generation</li>
+                    <ul class="feature-benefits">
+                        <li>Create reusable environments</li>
+                        <li>Keep backgrounds consistent</li>
+                        <li>Reuse locations across episodes</li>
+                        <li>Build persistent story worlds</li>
                     </ul>
+                </div>
+                <div class="feature-visual">
+                    <img
+                        src="./assets/images/features/environments.webp"
+                        alt="Pixle Environment Studio showing reusable animated story locations"
+                        width="1600"
+                        height="900"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </div>
+            </article>
 
-                </article>
-
-
-                <article class="product-card">
-
-                    <div class="product-marker"></div>
-
-                    <h3>Creative Control</h3>
-
+            <!-- FEATURE 3: LIVE ACTION TO ANIMATION -->
+            <article class="feature-row">
+                <div class="feature-copy">
+                    <span class="feature-eyebrow">AI Video Transformation</span>
+                    <h3>From live action to animation.</h3>
                     <p>
-                        Bring everything together on a visual canvas and
-                        timeline while keeping control over the final result.
+                        Transform real-world footage into animated videos. Choose your
+                        preferred visual style and bring live-action motion into your
+                        creative universe.
                     </p>
-
-                    <ul class="product-list">
-                        <li>Scene composition</li>
-                        <li>Timeline editing</li>
-                        <li>Visual layers and effects</li>
-                        <li>Collaboration and review</li>
+                    <ul class="feature-benefits">
+                        <li>Upload live-action footage</li>
+                        <li>Choose your animation style</li>
+                        <li>Convert clips into animation</li>
+                        <li>Bring real footage into your stories</li>
                     </ul>
+                </div>
+                <div class="feature-visual">
+                    <img
+                        src="./assets/images/features/live-action-animation.webp"
+                        alt="Pixle Live Action to Animation converting real footage into an animated video"
+                        width="1600"
+                        height="900"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </div>
+            </article>
 
-                </article>
+            <!-- FEATURE 4: TIMELINE EDITOR -->
+            <article class="feature-row reverse">
+                <div class="feature-copy">
+                    <span class="feature-eyebrow">Creative Editor</span>
+                    <h3>Edit every moment.</h3>
+                    <p>
+                        Fine-tune scenes, timing, audio, and creative assets from one
+                        intuitive visual timeline. Keep control over every detail of
+                        your final animation.
+                    </p>
+                    <ul class="feature-benefits">
+                        <li>Arrange scenes on the timeline</li>
+                        <li>Add audio and sound effects</li>
+                        <li>Bring in your own assets</li>
+                        <li>Refine pacing and composition</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <img
+                        src="./assets/images/features/timeline-editor.webp"
+                        alt="Pixle animation editor with scene timeline, audio, and creative assets"
+                        width="1600"
+                        height="900"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </div>
+            </article>
 
+            <!-- FEATURE 5: COLLABORATION -->
+            <article class="feature-row">
+                <div class="feature-copy">
+                    <span class="feature-eyebrow">Collaboration</span>
+                    <h3>Create together.</h3>
+                    <p>
+                        Bring your team into one creative workspace. Share projects,
+                        invite collaborators, and manage access as you build animated
+                        stories together.
+                    </p>
+                    <ul class="feature-benefits">
+                        <li>Invite collaborators by link or email</li>
+                        <li>Share projects with your team</li>
+                        <li>Control project access</li>
+                        <li>Work together in one workspace</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <img
+                        src="./assets/images/features/collaboration.webp"
+                        alt="Pixle collaboration interface for sharing animation projects with a team"
+                        width="1600"
+                        height="900"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </div>
+            </article>
+
+            <div class="feature-cta">
+                <h3>Ready to bring your stories to life?</h3>
+                <p>
+                    Start creating animated videos with Pixle.
+                    Your first story starts here.
+                </p>
+                <a href="https://app.pixle.pro/signup" class="button primary">
+                    Start your free trial →
+                </a>
+                <p class="hero-note">30-day free trial · No credit card required</p>
             </div>
 
         </div>
-
     </section>
 
 
