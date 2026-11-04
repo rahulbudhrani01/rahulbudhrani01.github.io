@@ -689,6 +689,11 @@
             object-fit: contain;
         }
 
+        .feature-visual img.publish-feature-image {
+            aspect-ratio: 4 / 3;
+            object-fit: contain;
+        }
+
         .feature-cta {
             margin: 1rem auto 0;
             padding: 3rem 1.5rem;
@@ -1536,8 +1541,9 @@
                 <p class="eyebrow">Explore Pixle</p>
                 <h2>Everything you need to create animated stories.</h2>
                 <p class="section-intro">
-                    From AI-powered animation to reusable characters and environments,
-                    Pixle brings your creative workflow together in one workspace.
+                    From AI-powered animation and reusable creative assets to team collaboration
+                    and direct YouTube publishing, Pixle brings your entire workflow together
+                    in one workspace.
                 </p>
             </div>
 
@@ -1681,6 +1687,37 @@
                         alt="Pixle collaboration interface for sharing animation projects with a team"
                         width="1600"
                         height="900"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </div>
+            </article>
+
+
+
+            <!-- FEATURE 6: YOUTUBE PUBLISHING -->
+            <article class="feature-row reverse">
+                <div class="feature-copy">
+                    <span class="feature-eyebrow">YouTube Publishing</span>
+                    <h3>Create it. Publish it. All in Pixle.</h3>
+                    <p>
+                        Take your video from imagination to your YouTube audience
+                        without leaving Pixle.
+                    </p>
+                    <ul class="feature-benefits">
+                        <li>Publish directly to YouTube — no downloading and re-uploading</li>
+                        <li>Make every video discoverable — add titles, descriptions and tags</li>
+                        <li>You’re in control — choose visibility and audience settings</li>
+                        <li>One seamless workflow — create, edit and publish from one studio</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <img
+                        class="publish-feature-image"
+                        src="./assets/images/features/publish.webp"
+                        alt="Pixle video export and YouTube publishing options, including title, description, tags, visibility and audience settings"
+                        width="1448"
+                        height="1086"
                         loading="lazy"
                         decoding="async"
                     >
