@@ -681,7 +681,8 @@
             box-shadow: 0 20px 65px rgba(110, 65, 220, 0.14);
         }
 
-        .feature-visual img {
+        .feature-visual img,
+        .feature-visual video {
             display: block;
             width: 100%;
             height: auto;
@@ -692,6 +693,12 @@
         .feature-visual img.publish-feature-image {
             aspect-ratio: 4 / 3;
             object-fit: contain;
+        }
+
+        .feature-visual video.publish-feature-image {
+            aspect-ratio: 16 / 9;
+            object-fit: contain;
+            background: #080809;
         }
 
         .feature-cta {
@@ -1565,14 +1572,16 @@
                     </ul>
                 </div>
                 <div class="feature-visual">
-                    <img
-                        src="./assets/images/features/character-studio.webp"
-                        alt="Pixle Character Studio showing reusable animated characters and voice assets"
-                        width="1600"
-                        height="900"
-                        loading="lazy"
-                        decoding="async"
-                    >
+                    <video
+                      class="character-studio-feature-image"
+                      autoplay
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                      >
+                      <source src="./assets/images/features/character-studio.mp4" type="video/mp4">
+                    </video>
                 </div>
             </article>
 
@@ -1594,14 +1603,16 @@
                     </ul>
                 </div>
                 <div class="feature-visual">
-                    <img
-                        src="./assets/images/features/environments.webp"
-                        alt="Pixle Environment Studio showing reusable animated story locations"
-                        width="1600"
-                        height="900"
-                        loading="lazy"
-                        decoding="async"
-                    >
+                    <video
+                      class="environement-feature-image"
+                      autoplay
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                      >
+                      <source src="./assets/images/features/environment.mp4" type="video/mp4">
+                    </video>
                 </div>
             </article>
 
@@ -1623,14 +1634,16 @@
                     </ul>
                 </div>
                 <div class="feature-visual">
-                    <img
-                        src="./assets/images/features/live-action-animation.webp"
-                        alt="Pixle Live Action to Animation converting real footage into an animated video"
-                        width="1600"
-                        height="900"
-                        loading="lazy"
-                        decoding="async"
-                    >
+                    <video
+                      class="live-action-feature-image"
+                      autoplay
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                      >
+                      <source src="./assets/images/features/live-action.mp4" type="video/mp4">
+                    </video>
                 </div>
             </article>
 
@@ -1652,14 +1665,16 @@
                     </ul>
                 </div>
                 <div class="feature-visual">
-                    <img
-                        src="./assets/images/features/timeline-editor.webp"
-                        alt="Pixle animation editor with scene timeline, audio, and creative assets"
-                        width="1600"
-                        height="900"
-                        loading="lazy"
-                        decoding="async"
-                    >
+                    <video
+                      class="timeline-feature-image"
+                      autoplay
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                      >
+                      <source src="./assets/images/features/timeline.mp4" type="video/mp4">
+                    </video>
                 </div>
             </article>
 
@@ -1682,14 +1697,16 @@
                     </ul>
                 </div>
                 <div class="feature-visual">
-                    <img
-                        src="./assets/images/features/collaboration.webp"
-                        alt="Pixle collaboration interface for sharing animation projects with a team"
-                        width="1600"
-                        height="900"
-                        loading="lazy"
-                        decoding="async"
-                    >
+                    <video
+                      class="collaboration-feature-image"
+                      autoplay
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                      >
+                      <source src="./assets/images/features/collaboration.mp4" type="video/mp4">
+                    </video>
                 </div>
             </article>
 
@@ -1712,15 +1729,17 @@
                     </ul>
                 </div>
                 <div class="feature-visual">
-                    <img
-                        class="publish-feature-image"
-                        src="./assets/images/features/publish.webp"
-                        alt="Pixle video export and YouTube publishing options, including title, description, tags, visibility and audience settings"
-                        width="1448"
-                        height="1086"
-                        loading="lazy"
-                        decoding="async"
-                    >
+
+                    <video
+                      class="publish-feature-image"
+                      autoplay
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                      >
+                      <source src="./assets/images/features/publish.mp4" type="video/mp4">
+                    </video>
                 </div>
             </article>
 
