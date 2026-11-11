@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Create Consistent AI Characters Across Animated Scenes | Pixle</title>
+  <meta name="description" content="A practical guide to keeping AI animated characters consistent across scenes using reusable character references, environments, and Pixle's video workflow.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.pixle.pro/blog/consistent-ai-characters">
+  <style>
+    :root{color-scheme:light;--ink:#24213a;--soft:#66647a;--violet:#6049ae;--faint:#f6f3fd;--line:#e9e5f2;--page:#fcfbff;--aqua:#20bed5}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--page);font:17px/1.75 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--violet)}img{max-width:100%;height:auto;display:block}figure{margin:2.2rem 0}figcaption{font-size:.87rem;line-height:1.55;color:var(--soft);margin-top:.7rem}h1,h2,h3{line-height:1.19;letter-spacing:-.035em}h1{font-size:clamp(2.3rem,5vw,4rem);margin:.5rem 0 1.1rem}h2{font-size:clamp(1.65rem,3vw,2.15rem);margin:2.6rem 0 1rem;scroll-margin-top:86px}h3{font-size:1.18rem;margin:1.4rem 0 .5rem}p{margin:1.1rem 0}li{padding-left:.15rem;margin:.5rem 0}ul,ol{padding-left:1.5rem}
+    .topbar{background:#28223e;color:#fff}.topbar-inner{max-width:1160px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:15px 24px;gap:12px}.wordmark{color:#fff;text-decoration:none;font-size:1.6rem;font-weight:650;letter-spacing:-.085em}.topbar nav{display:flex;gap:18px;align-items:center;font-size:.87rem}.topbar nav a{color:#fff;text-decoration:none}.topbar nav .action{background:#fff;color:#302554;padding:9px 14px;border-radius:9px;font-weight:700}
+    .layout{max-width:1120px;margin:auto;display:grid;grid-template-columns:minmax(0,740px) 230px;gap:55px;padding:48px 24px 80px}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:.73rem;font-weight:800;color:var(--violet)}.dek{font-size:1.22rem;line-height:1.6;color:#514d66}.byline{color:var(--soft);font-size:.85rem;margin:1rem 0 2rem}.hero-img{width:100%;border-radius:16px;border:1px solid var(--line)}.toc{position:sticky;top:28px;align-self:start;padding-top:140px;font-size:.84rem;line-height:1.5}.toc strong{font-size:.77rem;text-transform:uppercase;letter-spacing:.1em;color:var(--soft)}.toc a{display:block;padding:8px 0;text-decoration:none;color:#4d4666}.toc a:hover{text-decoration:underline}.screenshot{border-radius:13px;border:1px solid var(--line);background:#131021}.screenshot.tall{max-height:700px;width:auto;margin:auto}.tip{background:var(--faint);border-left:4px solid var(--violet);padding:16px 22px;margin:2rem 0;border-radius:0 12px 12px 0}.tip p{margin:.2rem 0}.vid{width:100%;height:auto;aspect-ratio:3/2;border-radius:13px;background:#171323;display:block}.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.mini-grid figure{margin:0}.mini-grid img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:10px}.mini-grid figcaption{margin-top:.4rem}.callout{border:1px solid #d8cdee;border-radius:18px;padding:29px;background:linear-gradient(130deg,#f5efff,#f8fafd);margin:3rem 0}.callout h2{margin:0 0 .5rem}.cta{display:inline-block;background:var(--violet);padding:12px 21px;border-radius:11px;color:white;text-decoration:none;font-weight:700;margin-top:.6rem}.cta:hover{background:#493287}.note{font-size:.88rem;color:var(--soft)}footer{border-top:1px solid var(--line);max-width:1120px;margin:0 auto;padding:20px 24px 45px;color:var(--soft);font-size:.85rem}
+    @media(max-width:950px){.layout{grid-template-columns:1fr;max-width:790px}.toc{display:none}}@media(max-width:560px){.layout{padding:27px 18px 55px}.topbar-inner{padding:12px 18px}.topbar nav{gap:10px}.topbar nav .secondary{display:none}.mini-grid{grid-template-columns:1fr 1fr}.mini-grid figure:last-child{grid-column:span 2}.mini-grid figure:last-child img{aspect-ratio:2/1}.callout{padding:20px}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><div class="topbar-inner"><a class="wordmark" href="https://www.pixle.pro" aria-label="Pixle home">pixle</a><nav><a class="secondary" href="https://www.pixle.pro">About Pixle</a><a class="action" href="https://app.pixle.pro">Start creating</a></nav></div></header>
+  <div class="layout">
+    <main>
+      <article>
+        <header>
+          <div class="eyebrow">Animation tutorial · Character consistency</div>
+          <h1>How to Create Consistent AI Characters Across Animated Scenes</h1>
+          <p class="dek">One recognisable character. Different locations, expressions and camera angles. Here's how to build a repeatable animation workflow using Pixle.</p>
+          <p class="byline">By the Pixle Team · A walkthrough using the Pixle interface and a Milo animation example</p>
+          <img class="hero-img" src="assets/milo-missing-moon-poster.jpg" alt="Title frame from Milo and the Missing Moon, featuring Milo the animated caterpillar under a bright moon" width="768" height="512" fetchpriority="high">
+        </header>
+
+        <p>It's easy to generate a cute AI character once. It's harder to make that character look recognisable when you move from a bedroom to a forest, switch camera angles, add dialogue or start your next episode.</p>
+        <p>For creators producing animated YouTube channels, educational content or recurring children's stories, character continuity is part of what makes a series feel like a series. This guide shows a practical way to approach it with <a href="https://www.pixle.pro">Pixle</a>, using the caterpillar Milo as an example.</p>
+
+        <h2 id="why-consistency">Why characters drift between AI generations</h2>
+        <p>Generative systems can interpret the same description in slightly different ways each time. Proportions, eye shapes, textures, colours and accessories may change even when the prompt sounds identical.</p>
+        <p>Instead of asking the model to reinvent your character for every shot, work from an established visual identity and reuse it throughout production. References reduce ambiguity; reviewing each generated result is still important.</p>
+
+        <h2 id="character">1. Save your character in Character Studio</h2>
+        <p>Begin by defining a recognisable character identity. For Milo, that means his green segmented body, large expressive eyes, orange-tipped antennae and soft illustrative style.</p>
+        <p>In Pixle's <strong>Character Studio</strong>, creators can establish a persistent character identity and add visual assets and a voice reference over time. The screenshot below shows Milo in the saved-character library.</p>
+        <figure><img class="screenshot" src="assets/character-studio-milo.jpg" loading="lazy" alt="Pixle Character Studio with Milo saved in the character library and Edit and Voice controls" width="1500" height="970"><figcaption><strong>Pixle Character Studio.</strong> Milo is saved as a reusable character, with controls for editing his identity and working with voice references.</figcaption></figure>
+        <div class="tip"><p><strong>Creator tip:</strong> Build a mini character bible: a front-facing reference, a side view, characteristic expressions, consistent colours and notes about clothing or accessories. Use these to review each output.</p></div>
+
+        <h2 id="environment">2. Build reusable story environments</h2>
+        <p>A recurring character also needs a recognisable world. Pixle's <strong>Environment Studio</strong> lets creators save locations with reference images rather than describing each background again from scratch.</p>
+        <p>In the screenshot, the saved locations include <strong>Milo's bedroom</strong>, a treehouse and a bathroom. These assets can provide a consistent reference when the story returns to familiar places.</p>
+        <figure><img class="screenshot" src="assets/environment-studio-milo.jpg" loading="lazy" alt="Pixle Environment Studio displaying Milo's bedroom, a treehouse and a bathroom as reusable locations" width="1500" height="1037"><figcaption><strong>Environment Studio.</strong> Saved locations help a story keep recognisable backgrounds across different scenes.</figcaption></figure>
+
+        <h2 id="generate">3. Combine your character, environment and scene instructions</h2>
+        <p>Next, open the <strong>Character Image to Video</strong> workflow. In the interface shown below, you can select a character from the library, choose an optional saved environment and describe the action you want to animate.</p>
+        <p>The workflow also exposes animation-style and narrator-voice settings. The visible interface explains that your idea is first turned into a more detailed animation script before the video is generated.</p>
+        <figure><img class="screenshot tall" src="assets/character-image-to-video-workflow.jpg" loading="lazy" alt="Pixle Character Image to Video panel showing Milo, saved environment options, video prompt, animation style and narrator voice" width="1101" height="1690"><figcaption><strong>Character Image to Video.</strong> The workflow brings character references, locations and scene instructions into one place.</figcaption></figure>
+        <p>For a three-scene sequence, you might write:</p>
+        <ol>
+          <li><strong>Opening:</strong> Milo looks up at the moon from a leaf in a nighttime garden.</li>
+          <li><strong>Adventure:</strong> Milo crawls through oversized strawberry plants, looking around curiously.</li>
+          <li><strong>Discovery:</strong> Milo pauses on a sunflower and smiles in the warm moonlight.</li>
+        </ol>
+        <p>Keep the essential visual description of Milo stable, while changing the action, emotion and camera framing from scene to scene.</p>
+
+        <h2 id="result">4. Watch Milo across multiple scenes</h2>
+        <p>Here's the full animated short <em>Milo and the Missing Moon</em>, provided as a creative example. It shows Milo moving through multiple settings and close-ups, and later transforming into a butterfly. The same recognisable character is the thread connecting the story.</p>
+        <figure>
+          <video class="vid" controls playsinline preload="metadata" poster="assets/milo-missing-moon-poster.jpg" aria-label="Milo and the Missing Moon animated short film"><source src="assets/milo-and-the-missing-moon.mp4" type="video/mp4">Your browser does not support video playback.</video>
+          <figcaption><strong>Milo and the Missing Moon</strong> · Animated short · 2 min 29 sec. Watch the story, then compare Milo's silhouette, colours and face across the following frames.</figcaption>
+        </figure>
+        <div class="mini-grid">
+          <figure><img src="assets/milo-closeup.jpg" loading="lazy" alt="Close-up of Milo's green face and large eyes in a moonlit scene" width="768" height="512"><figcaption>Close-up expression</figcaption></figure>
+          <figure><img src="assets/milo-moon-scene.jpg" loading="lazy" alt="Milo viewed from the side beside the glowing moon" width="768" height="512"><figcaption>Side profile</figcaption></figure>
+          <figure><img src="assets/milo-sunflower-scene.jpg" loading="lazy" alt="Milo on a sunflower under moonlight" width="768" height="512"><figcaption>Different setting</figcaption></figure>
+        </div>
+        <p class="note">These frames illustrate continuity within one finished animation. They do not, by themselves, demonstrate the results of separately generated episodes.</p>
+
+        <h2 id="timeline">5. Review shots and assemble the story</h2>
+        <p>Before you assemble the final sequence, compare clips against your original character reference. Pay particular attention to eyes, antennae, body proportions, colouring, expression and the transition between camera angles.</p>
+        <p>Pixle also provides a timeline workspace for arranging the scene sequence. The screenshot below shows the editor before any finished video is displayed on the canvas.</p>
+        <figure><img class="screenshot" src="assets/pixle-timeline-editor.jpg" loading="lazy" alt="Pixle scene editor with a preview canvas, scene list and timeline" width="1500" height="976"><figcaption><strong>Pixle editor.</strong> The scene list and timeline provide the workspace for assembling a story.</figcaption></figure>
+        <p>If you have supporting audio or video files, Pixle also includes an assets panel where they can be uploaded and organised.</p>
+        <figure><img class="screenshot" src="assets/pixle-assets-library.jpg" loading="lazy" alt="Pixle Assets panel with audio and video upload box and uploaded files" width="1500" height="985"><figcaption><strong>Assets panel.</strong> Upload and organise supporting audio and video files alongside your animation project.</figcaption></figure>
+
+        <h2 id="checklist">6. Use a simple continuity checklist</h2>
+        <p>Even with saved references, generative video can introduce unwanted changes. Before publishing, check every scene against the character and environment references:</p>
+        <ul>
+          <li><strong>Character:</strong> face, proportions, colours, costume and distinctive features</li>
+          <li><strong>World:</strong> location details, perspective, lighting and atmosphere</li>
+          <li><strong>Style:</strong> texture, outlines, motion and overall visual treatment</li>
+          <li><strong>Audio:</strong> consistent voice, dialogue clarity and sound design</li>
+          <li><strong>Editing:</strong> whether adjacent shots feel like parts of the same story</li>
+        </ul>
+        <p>If a shot breaks continuity, review the prompt and references and revise it before publishing. Treat AI-assisted production as a workflow that combines generation with deliberate creative direction, not as a guarantee of flawless consistency.</p>
+
+        <div class="callout">
+          <div class="eyebrow">Create your own series</div>
+          <h2>Give your characters a world they can return to.</h2>
+          <p>Build reusable characters and environments, develop scenes and bring your animation together in Pixle.</p>
+          <a class="cta" href="https://app.pixle.pro">Start creating with Pixle</a>
+        </div>
+        <p class="note"><strong>About the author:</strong> The Pixle Team builds an AI-assisted animation workspace for creators producing characters, story environments and animated videos. This guide uses screenshots of the product interface and an example story supplied for the tutorial.</p>
+      </article>
+    </main>
+    <aside class="toc" aria-label="On this page">
+      <strong>In this guide</strong>
+      <a href="#why-consistency">Why consistency matters</a><a href="#character">1. Save your character</a><a href="#environment">2. Reuse environments</a><a href="#generate">3. Generate scenes</a><a href="#result">4. Watch Milo</a><a href="#timeline">5. Assemble your story</a><a href="#checklist">6. Continuity checklist</a>
+    </aside>
+  </div>
+  <footer>© Pixle · <a href="https://www.pixle.pro">pixle.pro</a> · <a href="https://app.pixle.pro">Create a video</a></footer>
+</body>
+</html>

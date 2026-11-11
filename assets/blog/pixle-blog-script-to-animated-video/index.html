@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>How to Turn a Script into an Animated Video Using AI | Pixle</title><meta name="description" content="Learn how to turn a script into an animated video with AI. Plan shots, reuse characters, generate scenes, add narration and edit in Pixle."><meta name="robots" content="index,follow"><link rel="canonical" href="https://www.pixle.pro/blog/script-to-animated-video"><meta property="og:type" content="article"><meta property="og:title" content="How to Turn a Script into an Animated Video Using AI"><meta property="og:description" content="Script to shot list to a finished AI-assisted animation: an illustrated Pixle workflow featuring Milo."><meta property="og:image" content="https://www.pixle.pro/blog/script-to-animated-video/assets/milo-original-character.jpg"><meta property="og:url" content="https://www.pixle.pro/blog/script-to-animated-video"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Turn a Script into an Animated Video Using AI", "description": "Learn how to turn a script into an animated video with AI. Plan shots, reuse characters, generate scenes, add narration and edit in Pixle.", "author": {"@type": "Organization", "name": "Pixle Team"}, "publisher": {"@type": "Organization", "name": "Pixle", "url": "https://www.pixle.pro"}, "mainEntityOfPage": "https://www.pixle.pro/blog/script-to-animated-video", "image": "https://www.pixle.pro/blog/script-to-animated-video/assets/milo-original-character.jpg"}</script><style>
+:root{--ink:#25233b;--muted:#686479;--purple:#6244aa;--purple-dark:#423073;--teal:#1ab7ce;--line:#e9e6f0;--soft:#f7f5fc;--paper:#fff;--bg:#fcfbff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.77 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;text-rendering:optimizeLegibility}
+a{color:var(--purple)}a:hover{color:var(--purple-dark)}
+img{display:block;max-width:100%;height:auto}h1,h2,h3{line-height:1.18;letter-spacing:-.035em;color:#25203c}h1{font-size:clamp(2.25rem,4vw,3.8rem);margin:14px 0 20px}h2{font-size:clamp(1.55rem,2.6vw,2.13rem);margin:58px 0 18px;scroll-margin-top:30px}h3{font-size:1.17rem;margin:28px 0 13px}p{margin:17px 0}li{margin:7px 0;padding-left:3px}ul,ol{padding-left:27px}
+nav.site{background:linear-gradient(100deg,#3e3377,#6b4bab);color:white}nav.site .wrap{max-width:1170px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:16px 24px;gap:20px}
+nav.site a{color:white;text-decoration:none}.logo{font-size:26px;letter-spacing:-.085em;font-weight:670;line-height:1}nav.site .links{display:flex;gap:20px;align-items:center;font-size:.86rem}nav.site .links a.primary{padding:10px 15px;border-radius:10px;background:#fff;color:#493579;font-weight:740}
+.layout{max-width:1160px;display:grid;grid-template-columns:minmax(0,760px) 220px;gap:70px;padding:48px 24px 85px;margin:auto}.content{min-width:0}
+.eyebrow{font-size:.77rem;letter-spacing:.13em;text-transform:uppercase;color:var(--purple);font-weight:790}.description{font-size:1.14rem;line-height:1.64;color:#504c67;max-width:690px}.meta{font-size:.85rem;color:var(--muted);margin:0 0 23px}.content>h1+p{font-size:1.2rem;line-height:1.62;color:#555068}
+.hero-art{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;margin:25px 0 33px}.hero-art img{max-height:340px;width:auto;margin:auto;object-fit:contain}
+figure{margin:31px 0}.product-shot{width:100%;height:auto;border:1px solid var(--line);border-radius:14px;background:#1a1532}.product-shot[src*="character-image-to-video"]{width:auto;max-height:760px;margin:auto}.milo-reference{border-radius:12px}figcaption{font-size:.87rem;color:var(--muted);line-height:1.52;margin-top:10px}figcaption::first-letter{text-transform:uppercase}
+.side{position:sticky;top:20px;align-self:start;padding-top:140px}.side h2{font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0 0 13px}.side a{display:block;text-decoration:none;font-size:.84rem;line-height:1.42;padding:9px 0;color:#50476f;border-bottom:1px solid #efedf4}
+.table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:26px 0}table{border-collapse:collapse;width:100%;min-width:580px;font-size:.87rem;line-height:1.55}th,td{padding:12px 13px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}th{background:#f0edf7;color:#4e3d79}tr:last-child td{border-bottom:0}td:nth-child(2){white-space:nowrap}
+.screenplay{margin:26px 0;padding:22px 26px;background:#f4f1fb;border-left:4px solid #7454b6;border-radius:0 10px 10px 0}.screenplay p{margin:0}
+.prompt-block{overflow-x:auto;padding:23px 26px;margin:25px 0;background:#1a1830;color:#f8f5ff;border-radius:14px;font: .85rem/1.62 ui-monospace,"SFMono-Regular",Consolas,monospace;white-space:pre-wrap}.prompt-block code{font:inherit}
+.video-block video{width:100%;aspect-ratio:768/512;display:block;background:#141127;border-radius:16px}
+.content>h2#cta{background:#f3eefa;border:1px solid #e2d8f3;border-radius:15px;padding:25px 25px 5px;margin-bottom:0}.content>h2#cta+p{background:#f3eefa;padding:0 25px 2px;margin:0;border-inline:1px solid #e2d8f3}.cta-line{background:#f3eefa;padding:5px 25px 27px;border-radius:0 0 15px 15px;margin:0;border-inline:1px solid #e2d8f3;border-bottom:1px solid #e2d8f3}.cta-line a{display:inline-block;background:#6447b1;color:#fff;text-decoration:none;font-weight:700;border-radius:10px;padding:11px 18px}
+.author-note{font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);padding-top:17px}.related-text{font-size:.9rem}
+.footer{max-width:1160px;margin:auto;padding:25px 24px 45px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+@media(max-width:1000px){.layout{max-width:790px;grid-template-columns:minmax(0,1fr)}.side{display:none}}@media(max-width:600px){body{font-size:16px}.layout{padding:29px 18px 54px}.hero-art{padding:8px}.hero-art img{max-height:280px}.table-scroll{margin-left:-2px;margin-right:-2px}nav.site .wrap{padding:13px 18px}nav.site .links a.secondary{display:none}.prompt-block{padding:17px;font-size:.77rem}blockquote{padding:20px}}
+</style></head><body><nav class="site"><div class="wrap"><a class="logo" href="https://www.pixle.pro/" aria-label="Pixle home">pixle</a><div class="links"><a class="secondary" href="https://www.pixle.pro/">Pixle home</a><a href="https://app.pixle.pro/?utm_source=blog&amp;utm_medium=article&amp;utm_campaign=script_to_animation" class="primary">Start creating</a></div></div></nav><div class="layout"><main class="content"><article aria-labelledby="page-title"><div class="eyebrow">Pixle Creator Academy · Script-to-animation tutorial</div><h1 id="page-title">How to Turn a Script into an Animated Video Using AI</h1>
+<p><strong>A practical, scene-by-scene Pixle tutorial — from your first line of dialogue to a finished animated story.</strong></p>
+<p><em>By the Pixle Team · Animation workflow guide · Illustrated with real Pixle screenshots and the creator-supplied Milo animation</em></p>
+<figure class="hero-art"><img alt="Original reference image of Milo the caterpillar, with bright green segments, big eyes and orange-tipped antennae" class="milo-reference" fetchpriority="high" height="1024" loading="eager" src="assets/milo-original-character.jpg" width="1536"/></figure>
+<p>You have a script. It might be a children's story, a classroom lesson, a music video concept or the pilot of a YouTube cartoon. How do you turn those words into an animated video—without losing the characters, pacing and story along the way?</p>
+<p>The trick is to <strong>translate the script into a sequence of specific visual decisions</strong>. An AI video tool can help generate individual shots, but it still needs to know <em>who is in each scene, where they are, what happens, how the camera behaves and what the audience should hear</em>.</p>
+<p>In this guide we'll use <a href="https://www.pixle.pro/">Pixle</a> and Milo the caterpillar to show the workflow. The example script below is an original <strong>illustrative exercise</strong>, not a transcript of the finished <em>Milo and the Missing Moon</em> film shown later.</p>
+<h2 id="overview">The short answer: script → shots → animation → edit</h2>
+<p>A reliable workflow has seven stages:</p>
+<ol>
+<li><strong>Read the script for visual beats.</strong> What must the audience actually see?</li>
+<li><strong>Split it into short shots.</strong> Give each shot one clear action and an intended duration.</li>
+<li><strong>Prepare recurring assets.</strong> Save the characters, environments and voice references.</li>
+<li><strong>Describe each shot.</strong> Combine the story action with movement, camera and style directions.</li>
+<li><strong>Review the AI's proposed scene script.</strong> Correct misunderstandings before generating video.</li>
+<li><strong>Generate and inspect the scenes.</strong> Check story clarity, character design and continuity.</li>
+<li><strong>Edit the film.</strong> Assemble the timeline, sound and transitions, then publish.</li>
+</ol>
+<p>The important distinction: a written screenplay is <strong>not yet a video-generation prompt</strong>. You need a production plan between the two.</p>
+<h2 id="script">1. Start with a script that can be seen and heard</h2>
+<p>A basic animation script needs at least three things: what we see, what we hear and how the moment changes the story. Keep dialogue separate from actions so nothing important gets lost.</p>
+<p>Here is a <strong>45-second practice scene</strong>, inspired by the theme of searching for a missing moon. It is not presented as the script used to produce the supplied Milo film.</p>
+<blockquote class="screenplay">
+<p><strong>INT. MILO'S BEDROOM — NIGHT</strong><br/>
+Milo looks through the round window. The sky is dark.<br/>
+<strong>MILO:</strong> “But the moon was right there!”<br/>
+Milo blinks, leans closer and notices a faint glow beyond the trees.<br/>
+<strong>NARRATOR:</strong> “Milo decided to follow the little light.”<br/>
+<strong>EXT. TREEHOUSE — NIGHT</strong><br/>
+Milo arrives at the foot of the treehouse. The clouds part, revealing the moon.<br/>
+<strong>MILO:</strong> “There you are!”</p>
+</blockquote>
+<p>The script communicates the story. The next step is to turn it into clips you can actually generate and edit.</p>
+<h2 id="shot-list">2. Break the script into a shot list</h2>
+<p>Instead of trying to generate the whole 45-second sequence in one instruction, divide it into manageable shots. One shot should usually communicate one main action or emotion. The durations below are <strong>planning estimates</strong>, not promises about clip lengths supported by any specific AI model.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Shot</th>
+<th style="text-align:right">Target duration</th>
+<th>What the viewer sees</th>
+<th>What the viewer hears</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 — Establish</td>
+<td style="text-align:right">6 sec</td>
+<td>Milo in his bedroom, looking toward the round window</td>
+<td>Gentle night ambience</td>
+</tr>
+<tr>
+<td>2 — React</td>
+<td style="text-align:right">8 sec</td>
+<td>Milo notices the missing moon and leans closer</td>
+<td>Milo: “But the moon was right there!”</td>
+</tr>
+<tr>
+<td>3 — Discover</td>
+<td style="text-align:right">11 sec</td>
+<td>A faint glow appears beyond the garden; Milo turns to follow it</td>
+<td>Narrator: “Milo decided to follow the little light.”</td>
+</tr>
+<tr>
+<td>4 — Resolve</td>
+<td style="text-align:right">12 sec</td>
+<td>Milo reaches the treehouse; clouds part to reveal the moon</td>
+<td>Soft musical lift; Milo: “There you are!”</td>
+</tr>
+<tr>
+<td>5 — Hold</td>
+<td style="text-align:right">8 sec</td>
+<td>Milo smiles as moonlight warms the scene</td>
+<td>Music resolves</td>
+</tr>
+</tbody>
+</table></div>
+<p>The five shots total <strong>45 seconds of planned screen time</strong>. In production, their actual lengths may change with the generated results, narration and editing rhythm.</p>
+<p><a href="shot-planner.csv">Download the companion shot-planning spreadsheet</a> to build your own sequence.</p>
+<p><strong>Keep each shot record specific:</strong> character, environment, action, camera, dialogue or narration, sound and approximate duration. Those details become your generation instructions and your editing checklist.</p>
+<h2 id="character">3. Save your character before you start animating</h2>
+<p>Recurring characters are easier to manage when their visual identities already exist. Milo's defining details include a green-and-yellow segmented body, orange-tipped antennae, expressive eyes and a layered illustration texture.</p>
+<p>In <strong>Pixle Character Studio</strong>, you can keep a named character identity in your library, attach visual assets and work with a voice reference. The screenshot below is from the actual Pixle interface, showing Milo as a saved character.</p>
+<figure><img alt="Real Pixle Character Studio showing Milo saved as a reusable character, alongside Edit and Voice controls" class="product-shot" height="970" loading="lazy" src="assets/character-studio-milo.jpg" width="1500"/><figcaption>Pixle Character Studio: save the character first, then select the same identity when animating your script's different shots.</figcaption></figure>
+
+<p>This matters because describing “a friendly green caterpillar” five different times leaves room for visual drift. Reusing a named reference helps preserve the character's defining features; you should still inspect each result.</p>
+<p>For more detail, read <a href="https://www.pixle.pro/blog/consistent-ai-characters">How to Create Consistent AI Characters Across Multiple Videos</a>.</p>
+<h2 id="environment">4. Choose a visual environment for each shot</h2>
+<p>The script says “Milo's bedroom” and “treehouse.” These should become reusable locations rather than unrelated backgrounds invented for each shot.</p>
+<p>Pixle's <strong>Environment Studio</strong> lets creators save named locations with reference images. The library below includes Milo's bedroom and a treehouse—both directly useful for the practice script.</p>
+<figure><img alt="Real Pixle Environment Studio containing Milo's bedroom, a treehouse and a third saved bathroom environment" class="product-shot" height="1037" loading="lazy" src="assets/environment-studio-milo.jpg" width="1500"/><figcaption>Environment Studio: give each scene a consistent place to happen, especially when your story returns to a location.</figcaption></figure>
+
+<p>Before generation, check that the lighting, time of day and visual treatment work together. A moonlit bedroom and a moonlit treehouse should feel like they belong to the same world, even when the camera angle changes.</p>
+<h2 id="prompt">5. Turn each shot into a useful AI animation instruction</h2>
+<p>This is the step where scriptwriting becomes directing. A strong shot instruction is <strong>specific about the action without trying to describe an entire movie</strong>.</p>
+<p>For Shot 2, you could give Pixle an instruction like this:</p>
+<pre class="prompt-block"><code class="language-text">CHARACTER
+Use Milo from the saved character library.
+
+ENVIRONMENT
+Use Milo's bedroom from the environment library. It is nighttime.
+
+ACTION
+Milo looks out of the round window, notices that the moon
+has disappeared, blinks and leans forward in surprise.
+
+CAMERA
+Start with a medium shot, then gently move closer to his face.
+
+LOOK AND FEEL
+Preserve Milo's established colour, proportions, antennae
+and layered illustrated texture. Soft nighttime lighting.
+
+AUDIO / STORY CONTEXT
+Milo says: "But the moon was right there!"
+Keep the performance curious, not frightened.
+</code></pre>
+<p>In Pixle's <strong>Character Image to Video</strong> workflow, select a saved character and optionally a saved environment, then describe the video idea. The interface also offers an animation-style selector and narrator-voice settings.</p>
+<figure><img alt="Real Character Image to Video interface in Pixle showing Milo, environment choices, prompt entry, style and narrator voice controls, and the generated video preview area" class="product-shot" height="1690" loading="lazy" src="assets/character-image-to-video-workflow.jpg" width="1101"/><figcaption>Character Image to Video: combine a reusable character, location and motion instructions before making a clip.</figcaption></figure>
+
+<h3 class="minor-heading">Use the script-planning step deliberately</h3>
+<p>The Pixle interface explains that your instructions first go to an <strong>AI script planner</strong>, which prepares a more detailed animated-video script before generation. Treat this as a creative checkpoint, not a formality.</p>
+<p>Before approving it, ask:</p>
+<ul>
+<li>Does the proposed action match the story beat?</li>
+<li>Are the intended characters and location correct?</li>
+<li>Is the camera doing one clear thing?</li>
+<li>Did the planner add an unwanted character, object or plot point?</li>
+<li>Are dialogue and narration instructions clear?</li>
+</ul>
+<p>If the plan misinterprets the scene, revise your instruction before paying for another generation. Generated video and dialogue quality can vary by model and scene.</p>
+<h2 id="generate">6. Generate, review and build the scene sequence</h2>
+<p>After generating a shot, watch it all the way through. Do not judge consistency from the first frame alone. Review the character's face, antennae, body colour, motion and the background throughout the clip.</p>
+<p>A practical approach is to generate one representative scene first. Once its style and character treatment work, use those decisions as a reference for the remaining shots. Save the best result for each shot and record any revisions in your shot list.</p>
+<p>For a completed animation example, watch <strong>Milo and the Missing Moon</strong> below. This is the creator-supplied finished film—not a claim that the five-shot practice script above was used to produce it.</p>
+<figure class="video-block"><video aria-label="Watch Milo and the Missing Moon, a finished animated short" controls="" playsinline="" poster="assets/milo-missing-moon-poster.jpg" preload="metadata"><source src="assets/milo-and-the-missing-moon.mp4" type="video/mp4"/>Your browser does not support embedded video playback. <a href="assets/milo-and-the-missing-moon.mp4">Open the Milo film</a>.</video></figure>
+<p><em>Finished example: Milo and the Missing Moon (2 min 29 sec). Compare the protagonist, mood, composition and pacing across the film.</em></p>
+<figure><img alt="Frame from Milo and the Missing Moon with Milo shown in an expressive close-up" class="product-shot" height="512" loading="lazy" src="assets/milo-closeup.jpg" width="768"/><figcaption>Close-up: a good test of facial features and performance.</figcaption></figure>
+
+<figure><img alt="Frame from Milo and the Missing Moon showing Milo in a different moonlit composition" class="product-shot" height="512" loading="lazy" src="assets/milo-moon-scene.jpg" width="768"/><figcaption>Wider composition: a good test of the character's recognisability across shots.</figcaption></figure>
+
+<h2 id="edit">7. Edit the video: timing, sound and final polish</h2>
+<p>Once you have usable clips, bring them into a timeline in script order. The <strong>Pixle Creative Editor</strong> provides a preview canvas, scene controls and a timeline for arranging shots and managing pacing.</p>
+<figure><img alt="Real Pixle video editor interface showing an empty preview canvas, scene list and editing timeline" class="product-shot" height="976" loading="lazy" src="assets/pixle-timeline-editor.jpg" width="1500"/><figcaption>Pixle Creative Editor: the interface for assembling and refining the sequence. This screenshot shows an empty project, not a finished edit.</figcaption></figure>
+
+<p>At this point, ask whether each cut advances the story. A surprised reaction may need an extra beat; an establishing shot might need to be shortened. Use dialogue, narration, sound effects and music to support the visual storytelling—not to explain a confusing scene after the fact.</p>
+<p>You can also bring supporting media into the <strong>Assets</strong> panel, which shows audio and video upload controls alongside stored files.</p>
+<figure><img alt="Real Pixle editor Assets panel showing audio and video file uploads" class="product-shot" height="985" loading="lazy" src="assets/pixle-assets-library.jpg" width="1500"/><figcaption>Assets panel: organise supporting audio and video resources for your edit.</figcaption></figure>
+
+<h3 class="minor-heading">Final checks before publishing</h3>
+<ul>
+<li><strong>Story:</strong> Does the beginning set up a clear question, and does the ending answer it?</li>
+<li><strong>Continuity:</strong> Does Milo keep his recognisable look from shot to shot?</li>
+<li><strong>Audio:</strong> Can viewers understand the dialogue and hear a consistent voice?</li>
+<li><strong>Timing:</strong> Does the edit leave enough time for important reactions and reveals?</li>
+<li><strong>Rights:</strong> Do you have permission to use all included characters, references, music, audio and imagery?</li>
+<li><strong>Export:</strong> Does the video have the correct aspect ratio, resolution and sound for its destination?</li>
+</ul>
+<p>Pixle's website also describes <strong>direct YouTube publishing</strong>, including video metadata and audience settings. Check the Publish flow available in your account; alternatively, export the completed video for the destination platform.</p>
+<h2 id="mistakes">Common mistakes when turning a script into AI animation</h2>
+<p><strong>Generating the whole script as a single prompt.</strong> The model may improvise important story beats. Shorter, well-defined shots are easier to inspect and arrange.</p>
+<p><strong>Writing only dialogue.</strong> Animation needs visible actions and reactions, not just spoken words. Give each line a performance and a camera perspective.</p>
+<p><strong>Changing character descriptions between scenes.</strong> Use the same saved identities and reference images instead of reinventing the design.</p>
+<p><strong>Skipping the rough edit.</strong> Individual clips can look attractive but feel disconnected together. Check timing and continuity in sequence.</p>
+<p><strong>Assuming every generation will be right on the first try.</strong> Leave room for creative review, iteration and costs that depend on your selected generation model and plan.</p>
+<h2 id="faqs">Frequently asked questions</h2>
+<h3 class="minor-heading">Can I animate a script with AI even if I can't draw?</h3>
+<p>Yes. You can prepare a story, split it into shots, use visual references and direct an AI animation workflow without hand-drawing every frame. Clear storytelling and creative review are still essential.</p>
+<h3 class="minor-heading">Should I generate an entire episode in one go?</h3>
+<p>For most narrative workflows, separate shots make it easier to control actions, characters, camera angles and pacing. Assemble the results after inspecting them.</p>
+<h3 class="minor-heading">How do I make the character look the same in every scene?</h3>
+<p>Keep a consistent visual reference, use saved character identities and review generated outputs side by side. Pixle's Character Studio is intended to support reusable characters across scenes and episodes.</p>
+<h3 class="minor-heading">Can I add narration and sound effects?</h3>
+<p>Pixle's visible workflow includes narrator voice settings, and its editor and Assets panel support sound and media work. How you time or revise a particular audio element will depend on the workflow and generation method you use.</p>
+<h3 class="minor-heading">How much does it cost to animate a script with AI?</h3>
+<p>Cost depends on scene duration, generation model, number of attempts and editing needs. A short shot list helps you estimate the work before committing to a full-length video. Check the current Pixle plans and generation costs in the app rather than relying on a fixed per-minute claim.</p>
+<h2 id="cta">Turn your next script into an animated story</h2>
+<p>If your story already exists on the page, the next step is to create a visual plan that preserves its characters, world and creative intent. Pixle brings saved characters, environments, AI-assisted scene generation and an editing timeline into one workspace.</p>
+<p class="cta-line"><strong><a href="https://app.pixle.pro/?utm_source=blog&amp;utm_medium=article&amp;utm_campaign=script_to_animation">Start creating with Pixle</a></strong></p>
+<p class="related-text"><strong>Related guides:</strong> <a href="https://www.pixle.pro/blog/consistent-ai-characters">How to Create Consistent AI Characters Across Multiple Videos</a> · <a href="https://www.pixle.pro/blog/ai-animated-youtube-series">How to Make an Animated YouTube Series Using AI</a></p>
+<hr/>
+<p class="author-note"><strong>About the author:</strong> The Pixle Team builds an AI-native animation workspace for creators making recurring characters, story worlds and animated videos. This guide uses real product screenshots, an original sample scene, and the supplied <em>Milo and the Missing Moon</em> animation. The example script and shot timings are illustrative.</p>
+</article></main><aside class="side" aria-label="On this page"><h2>In this article</h2><a href="#overview">Overview</a><a href="#script">1. Write for screen</a><a href="#shot-list">2. Plan your shots</a><a href="#character">3. Save characters</a><a href="#environment">4. Save environments</a><a href="#prompt">5. Prompt each shot</a><a href="#generate">6. Review generations</a><a href="#edit">7. Edit the film</a><a href="#mistakes">Common mistakes</a><a href="#faqs">FAQs</a></aside></div><footer class="footer">© Pixle · <a href="https://www.pixle.pro">pixle.pro</a> · <a href="https://app.pixle.pro">Start creating</a></footer></body></html>

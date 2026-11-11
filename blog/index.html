@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pixle Blog — Guides for Animated Storytelling</title>
+  <meta name="description" content="Practical guides from Pixle on creating animated characters, series and video workflows with AI-assisted animation.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://www.pixle.pro/blog/">
+  <link rel="icon" href="/favicon_io/icon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="/pixle-logo.webp">
+  
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pixle">
+  <meta property="og:title" content="Pixle Blog — Guides for Animated Storytelling">
+  <meta property="og:description" content="Practical guides from Pixle on creating animated characters, series and video workflows with AI-assisted animation.">
+  <meta property="og:url" content="https://www.pixle.pro/blog/">
+  <meta property="og:image" content="https://www.pixle.pro/assets/blog/pixle-blog-animated-youtube-series/assets/milo-missing-moon-poster.jpg">
+  <meta property="og:image:width" content="768">
+  <meta property="og:image:height" content="512">
+  <meta property="og:locale" content="en_US">
+  
+  
+  
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pixle Blog — Guides for Animated Storytelling">
+  <meta name="twitter:description" content="Practical guides from Pixle on creating animated characters, series and video workflows with AI-assisted animation.">
+  <meta name="twitter:image" content="https://www.pixle.pro/assets/blog/pixle-blog-animated-youtube-series/assets/milo-missing-moon-poster.jpg">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Pixle Blog","description":"Practical guides from Pixle on creating animated characters, series and video workflows with AI-assisted animation.","url":"https://www.pixle.pro/blog/","publisher":{"@type":"Organization","name":"Pixle","url":"https://www.pixle.pro/"},"blogPost":[{"@type":"BlogPosting","headline":"How to Make an Animated YouTube Series Using AI","url":"https://www.pixle.pro/blog/animated-youtube-series/"},{"@type":"BlogPosting","headline":"How to Create Consistent AI Characters Across Animated Scenes","url":"https://www.pixle.pro/blog/consistent-characters/"},{"@type":"BlogPosting","headline":"How to Create Recurring Animated Characters: From One Idea to an Entire Series","url":"https://www.pixle.pro/blog/recurring-animated-characters/"},{"@type":"BlogPosting","headline":"How to Turn a Script into an Animated Video Using AI","url":"https://www.pixle.pro/blog/script-to-animated-video/"}]}</script>
+
+  <link rel="stylesheet" href="/blog/blog.css">
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VW2S0SK06N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-VW2S0SK06N');
+
+  function trackSignupClick(event, buttonLocation) {
+    var link = event.currentTarget;
+    var destination = link.href;
+
+    if (typeof gtag !== 'function') return;
+
+    event.preventDefault();
+    var navigated = false;
+    function continueToSignup() {
+      if (navigated) return;
+      navigated = true;
+      window.location.href = destination;
+    }
+
+    gtag('event', 'signup_cta_click', {
+      button_location: buttonLocation,
+      event_callback: continueToSignup,
+      event_timeout: 1000
+    });
+
+    window.setTimeout(continueToSignup, 1200);
+  }
+</script>
+</head>
+<body class="blog-page blog-index">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav aria-label="Primary navigation">
+    <div class="nav-content">
+
+        <a href="/" aria-label="Pixle home">
+            <img
+                src="/pixle-logo.webp"
+                alt="Pixle.Pro"
+                class="brand-logo"
+                width="320"
+                height="80"
+            >
+        </a>
+
+        <div class="nav-links">
+
+            <a href="/#samples">Samples</a>
+            <a href="/#product">Product</a>
+            <a href="/#characters">Characters</a>
+            <a href="/#workflow">Workflow</a>
+            <a href="/blog/" aria-current="page">Blog</a>
+            <a href="https://app.pixle.pro/signup?utm_source=blog&amp;utm_medium=nav&amp;utm_campaign=signup" class="nav-cta" onclick="trackSignupClick(event, 'nav')">Sign up</a>
+
+            <div class="social-links" aria-label="Social links">
+
+                <a
+                    href="https://www.instagram.com/_pixle.pro/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Follow Pixle on Instagram"
+                >
+                    <img
+                        src="/assets/images/social/Instagram_Glyph_Gradient.svg"
+                        alt=""
+                        class="social-icon"
+                        width="22"
+                        height="22"
+                    >
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/company/pixle-pro-ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Connect with Pixle on LinkedIn"
+                >
+                    <img
+                        src="/assets/images/social/LI-In-Bug.png"
+                        alt=""
+                        class="social-icon"
+                        width="22"
+                        height="22"
+                    >
+                </a>
+
+                <a
+                    href="https://x.com/pixle_pro"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Follow Pixle on X"
+                >
+                    <img
+                        src="/assets/images/social/twitter_logo.svg"
+                        alt=""
+                        class="social-icon"
+                        width="22"
+                        height="22"
+                    >
+                </a>
+
+                <a
+                    href="https://www.youtube.com/@pixleprostudio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Subscribe to Pixle on YouTube"
+                >
+                    <svg
+                        class="social-icon youtube-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <path
+                            fill="currentColor"
+                            d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"
+                        ></path>
+                    </svg>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+  <main id="main" class="blog-main">
+    <section class="blog-hero">
+      <p class="eyebrow">Pixle Blog</p>
+      <h1>Guides for animated storytelling.</h1>
+      <p class="blog-hero-copy">Practical guides from Pixle on animated characters, series and video workflows.</p>
+      <a class="button primary" href="https://app.pixle.pro/signup?utm_source=blog&utm_medium=blog_index&utm_campaign=blog_index" data-blog-cta="blog_index_hero">Start your free trial</a>
+    </section>
+
+    <section class="blog-listing" aria-labelledby="latest-guides">
+      <div class="blog-listing-header">
+        <h2 id="latest-guides">Latest guides</h2>
+        <p>4 guides</p>
+      </div>
+      <div class="blog-grid">
+        <article class="blog-card">
+        <a class="blog-card-link" href="/blog/animated-youtube-series/">
+          <div class="blog-card-media">
+            <img src="/assets/blog/pixle-blog-animated-youtube-series/assets/milo-missing-moon-poster.jpg" alt="Opening title image from the animated short Milo and the Missing Moon" width="768" height="512" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-category">YouTube series production</p>
+            <h3 class="blog-card-title">How to Make an Animated YouTube Series Using AI</h3>
+            <p class="blog-card-description">Learn how to plan, create and publish an animated YouTube series using AI. A practical episode workflow with reusable characters, environments and Pixle screenshots.</p>
+            <p class="blog-card-meta">
+              <time datetime="2026-11-11">11 November 2026</time> · 8 min read
+            </p>
+          </div>
+        </a>
+      </article>
+<article class="blog-card">
+        <a class="blog-card-link" href="/blog/consistent-characters/">
+          <div class="blog-card-media">
+            <img src="/assets/blog/pixle-blog-consistent-characters/assets/milo-missing-moon-poster.jpg" alt="Title frame from Milo and the Missing Moon, featuring Milo the animated caterpillar under a bright moon" width="768" height="512" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-category">Character consistency</p>
+            <h3 class="blog-card-title">How to Create Consistent AI Characters Across Animated Scenes</h3>
+            <p class="blog-card-description">A practical guide to keeping AI animated characters consistent across scenes using reusable character references, environments, and Pixle&#39;s video workflow.</p>
+            <p class="blog-card-meta">
+              <time datetime="2026-11-11">11 November 2026</time> · 4 min read
+            </p>
+          </div>
+        </a>
+      </article>
+<article class="blog-card">
+        <a class="blog-card-link" href="/blog/recurring-animated-characters/">
+          <div class="blog-card-media">
+            <img src="/assets/blog/pixle-blog-recurring-animated-characters/assets/milo-original-character.jpg" alt="Milo, a green-and-yellow illustrated caterpillar with orange antennae and expressive eyes" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-category">Character design</p>
+            <h3 class="blog-card-title">How to Create Recurring Animated Characters: From One Idea to an Entire Series</h3>
+            <p class="blog-card-description">Learn how to create recurring animated characters with a character bible, reusable designs, voice references, story worlds and Pixle tutorials featuring Milo.</p>
+            <p class="blog-card-meta">
+              <time datetime="2026-11-10">10 November 2026</time> · 10 min read
+            </p>
+          </div>
+        </a>
+      </article>
+<article class="blog-card">
+        <a class="blog-card-link" href="/blog/script-to-animated-video/">
+          <div class="blog-card-media">
+            <img src="/assets/blog/pixle-blog-script-to-animated-video/assets/milo-original-character.jpg" alt="Original reference image of Milo the caterpillar, with bright green segments, big eyes and orange-tipped antennae" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-category">Animation workflow</p>
+            <h3 class="blog-card-title">How to Turn a Script into an Animated Video Using AI</h3>
+            <p class="blog-card-description">Learn how to turn a script into an animated video with AI. Plan shots, reuse characters, generate scenes, add narration and edit in Pixle.</p>
+            <p class="blog-card-meta">
+              <time datetime="2026-11-11">11 November 2026</time> · 10 min read
+            </p>
+          </div>
+        </a>
+      </article>
+      </div>
+    </section>
+
+    <section class="blog-cta" aria-labelledby="blog-cta-heading">
+      <p class="eyebrow">Get started with Pixle</p>
+      <h2 id="blog-cta-heading">Ready to bring your stories to life?</h2>
+      <p>Create reusable characters, animated scenes and finished videos in one workspace.</p>
+      <a class="button primary" href="https://app.pixle.pro/signup?utm_source=blog&utm_medium=blog_index&utm_campaign=blog_index" data-blog-cta="blog_index_footer">Start your free trial</a>
+    </section>
+  </main>
+
+  <footer>
+
+    <div class="footer-content">
+
+        <p>
+            © 2026 Pixle — AI-native animation for creators · <a href="/blog/">Blog</a>
+        </p>
+
+        <div class="social-links" aria-label="Social links">
+
+            <a
+                href="https://www.instagram.com/_pixle.pro/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow Pixle on Instagram"
+            >
+                <img
+                    src="/assets/images/social/Instagram_Glyph_Gradient.svg"
+                    alt=""
+                    class="social-icon"
+                    width="22"
+                    height="22"
+                >
+            </a>
+
+            <a
+                href="https://www.linkedin.com/company/pixle-pro-ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Connect with Pixle on LinkedIn"
+            >
+                <img
+                    src="/assets/images/social/LI-In-Bug.png"
+                    alt=""
+                    class="social-icon"
+                    width="22"
+                    height="22"
+                >
+            </a>
+
+            <a
+                href="https://x.com/pixle_pro"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow Pixle on X"
+            >
+                <img
+                    src="/assets/images/social/twitter_logo.svg"
+                    alt=""
+                    class="social-icon"
+                    width="22"
+                    height="22"
+                >
+            </a>
+
+            <a
+                href="https://www.youtube.com/@pixleprostudio"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Subscribe to Pixle on YouTube"
+            >
+                <svg
+                    class="social-icon youtube-icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    focusable="false"
+                >
+                    <path
+                        fill="currentColor"
+                        d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"
+                    ></path>
+                </svg>
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+  <script src="/blog/blog.js" defer></script>
+</body>
+</html>
