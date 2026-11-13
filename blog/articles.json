@@ -98,5 +98,25 @@
   "featuredImageHeight": 1114,
   "draft": false,
   "canonicalUrl": "https://www.pixle.pro/blog/ai-vs-traditional-animation/"
-}
+},
+  {
+    "slug": "pixle-vs-ai-video-models",
+    "sourceDir": "assets/blog/pixle-blog-why-pixle-for-animation",
+    "sourceIndex": "index.html",
+    "headerEnd": "</header>",
+    "order": 6,
+    "title": "Pixle vs AI Video Models: Why Animation Needs More Than a Prompt",
+    "seoTitle": "Pixle vs AI Video Models: Why Animation Needs More Than a Prompt | Pixle",
+    "description": "Explore how Pixle differs from AI video models, with reusable characters, consistent environments, scene editing and a workflow built for animation.",
+    "category": "Animation workflow",
+    "author": "Pixle Team",
+    "publishedAt": "2026-11-12",
+    "updatedAt": null,
+    "featuredImage": "/assets/blog/pixle-blog-why-pixle-for-animation/assets/hero.jpg",
+    "featuredImageAlt": "Title card for Pixle vs AI Video Models showing Milo the caterpillar between a single AI video clip and a complete animation workflow with three episodes",
+    "featuredImageWidth": 1672,
+    "featuredImageHeight": 1114,
+    "draft": false,
+    "canonicalUrl": "https://www.pixle.pro/blog/pixle-vs-ai-video-models/"
+  }
 ]
